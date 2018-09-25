@@ -142,8 +142,8 @@ By default all geth commands are bound to the default chain. This involves the c
 
 At any given moment you can list the available accounts, using:  
 
-```geth account list  
-WARN [04-11|14:19:13] No etherbase set and no accounts found as default```  
+        geth account list  
+        WARN [04-11|14:19:13] No etherbase set and no accounts found as default  
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
 
@@ -152,30 +152,26 @@ As you have not yet added an account you will see the above warning. So lets see
 The  
 ```geth account new```  
 command adds a new account. When prompted enter the same password twice:  
-```
-geth account new  
-Your new account is locked with a password. Please give a password. Do not forget this password.  
-Passphrase:  
-Repeat passphrase:  
-Address: {67b7b218cb53611612e2983cf2fa45ce01540cf9}  
-```
+
+        geth account new  
+        Your new account is locked with a password. Please give a password. Do not forget this password.  
+        Passphrase:  
+        Repeat passphrase:  
+        Address: {67b7b218cb53611612e2983cf2fa45ce01540cf9}  
 
 The last line indicates the unique address of your new account. When later transfering ether between accounts we need this address. This address is also referred to as the coinbase.  
 If you now check the content of your ~/.ethereum directory the newly created account will show up there.
 
-```
-schieder@chartreuse:.ethereum $ tree  
-.  
---- keystore  
------- UTC--2018-04-12T11-56-57.442014523Z--67b7b218cb53611612e2983cf2fa45ce01540cf9  
-```
+        schieder@chartreuse:.ethereum $ tree  
+        .  
+        --- keystore  
+        ------ UTC--2018-04-12T11-56-57.442014523Z--67b7b218cb53611612e2983cf2fa45ce01540cf9  
 
 Of course you do not need to inspect the file system to find your new account you can also retrieve a list of accounts using:  
-```
-geth account list  
-Account #0: {564a2f909e604268d865654086a36f19ac915b07} keystore:///home/schieder/.ethereum/keystore/UTC--2018-04-11T13-03-56.222342097Z--564a2f909e604268d865654086a36f19ac915b07
-```
 
+        geth account list  
+        Account #0: {564a2f909e604268d865654086a36f19ac915b07} keystore:///home/schieder/.ethereum/keystore/UTC--2018-04-11T13-03-56.222342097Z--564a2f909e604268d865654086a36f19ac915b07
+        
 
 ## Mining
 
