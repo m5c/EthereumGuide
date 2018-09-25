@@ -149,11 +149,11 @@ As you have not yet added an account you will see the above warning. So lets see
 The ```geth account new``` command adds a new account. When prompted enter the same password twice:  
 
 ```bash
-        geth account new  
-        Your new account is locked with a password. Please give a password. Do not forget this password.  
-        Passphrase:  
-        Repeat passphrase:  
-        Address: {67b7b218cb53611612e2983cf2fa45ce01540cf9}  
+geth account new  
+Your new account is locked with a password. Please give a password. Do not forget this password.  
+Passphrase:  
+Repeat passphrase:  
+Address: {67b7b218cb53611612e2983cf2fa45ce01540cf9}  
 ```
 
 The last line indicates the unique address of your new account. When later transfering ether between accounts we need this address. This address is also referred to as the coinbase.  
