@@ -198,8 +198,7 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 
 You have two options for mining. 
 
- * Use the geth console and type:
-        miner.start()
+ * Open a geth console and type ```miner.start()```
 
  * Launch geth with the ```--mine``` option.  
 
