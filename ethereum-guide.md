@@ -30,7 +30,6 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
         echo '#!/bin/bash' >> ~/bin/web3j  
         echo '~/web3j-3.5.0/bin/web3j "$@"' >> ~/bin/web3j  
         chmod +x ~/bin/web3j
-
 *Note: Make sure the ~/bin/ directory is in your [PATH](https://opensource.com/article/17/6/set-path-linux).*
 
 
