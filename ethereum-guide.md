@@ -259,7 +259,7 @@ Once you have imported a script, you can directly call functions defined within.
 
 ## Basic Programmatic Access
 
-This far all described blockchain interactions were effectuated manually. This means whenever we wanted to acces the blockchain we used using geth or its built-in console. Apart from those, ```geth``` offers two more ways to access the blockchain. 
+This far all described blockchain interactions were effectuated manually. This means whenever you accessed the blockchain, you did so used either the ```geth``` command or its built-in console. But geth can also expose its functionality and work as a proxy. The two most outstanding ways to achieve this are:. 
 
  * Using *RPCs* (Remote Procedure Calls)  
 Geth acts as a proxy on a given port and ip. Can be seen as the more generic one, for it allows accessing a remote node over a network connection.
