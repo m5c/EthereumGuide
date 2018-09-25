@@ -207,7 +207,9 @@ To get your balance in *Wei*, type:
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
 
-        web3.fromWei(eth.getBalance(eth.coinbase), "ether")  
+```javascript
+    web3.fromWei(eth.getBalance(eth.coinbase), "ether")  
+```
 
 *Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
