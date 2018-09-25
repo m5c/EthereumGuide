@@ -242,6 +242,7 @@ loadScript("/path/to/your/custom/function.js")
 
 The following example prints a list of all account balances. See [here](https://ethereum.gitbooks.io/frontier-guide/listing_accounts.html) for the original.
 
+```javascript
         function checkAllBalances() {  
             var totalBal = 0;  
             for (var acctNum in eth.accounts) {  
@@ -252,6 +253,7 @@ The following example prints a list of all account balances. See [here](https://
             }  
             console.log("  Total balance: " + totalBal + " ether");  
         };  
+```
 
 Once you have imported a script, you can directly call functions defined within. In regard to the above listing, this would be:  
 
