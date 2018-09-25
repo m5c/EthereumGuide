@@ -57,10 +57,12 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * Install geth:
 
-        brew update  
-        brew upgrade  
-        brew tap ethereum/ethereum  
-        brew install ethereum  
+```bash
+    brew update  
+    brew upgrade  
+    brew tap ethereum/ethereum  
+    brew install ethereum  
+```
 
  * Download Web3J, extract and create terminal reference:  
 *-Same as Linux instructions above-*
