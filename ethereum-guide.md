@@ -273,7 +273,7 @@ Before using ```geth```s *RPC* functionality from a high-level programming langu
 
 #### Access to an account
 
-By now you should already have this covered. If not, create your [private blockchain](#privatechain), create an [account](#creation), then [mine](#mining) until you have about 20 ether. 
+By now you should already have this covered. If not, create your [private blockchain](#privatechain), create an [account](#accounts), then [mine](#mining) until you have about 20 ether. 
 
 #### Run an HTTP-enabled geth node
 
