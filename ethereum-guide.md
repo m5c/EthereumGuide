@@ -115,7 +115,7 @@ Paste the following content into that file. **C&P is not enough, you still have 
             "timestamp": "0x00"
         }
 
-Essentially, this description nails down the characteristics of your new custom blockchain. However in a network, there must not be two different chains using the same *chainId*. To avoid that, edit the *chainId* value and fill in a number that is sufficiently high and unique, e.g. your birthday + 12345, then dave the file.
+Essentially, this description nails down the characteristics of your new custom blockchain. However in a network, there must not be two different chains using the same *chainId*. To avoid that, edit the *chainId* value and fill in a number that is sufficiently high and unique, e.g. your birthday + 12345, then save the file.
 
 For an explanation of the remaining fields, [look here](https://ethereum.stackexchange.com/questions/2376/what-does-each-genesis-json-parameter-mean).
 
@@ -185,6 +185,7 @@ Account #0: {564a2f909e604268d865654086a36f19ac915b07} keystore:///home/schieder
 ### Balance
 
 Each account has an amount of ether attached. To query your balance, open the console with  
+
 ```geth --nodiscover console```  
 
 *Note: By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look our for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
