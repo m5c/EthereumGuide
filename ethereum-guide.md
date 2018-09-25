@@ -20,7 +20,6 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
  * Install geth:  
 
         emerge -a net-p2p/go-ethereum  
-
 *[Ubuntu equivalent](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)*
 
  * Download Web3J, extract and create terminal reference:  
@@ -200,15 +199,20 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 ### Mine
 
 You have two options for mining. You can pass over the geth console (type ```miner.start()```) or you can launch  geth with the ```--mine``` option.  
-The first time you start to mine, geth will build a local DAG (direct acyclic graph) representation in the RAM. As your chain is empty this goes super fast, but if later you try to mine on public chains this step may take a while. Throughout the DAG generation you will repeatedly see log ```Generating DAG in progress``` running through the console. Once the DAG generation is complete your geth instance tries to build a new block.
 
-Whenever a block was found, you will see the following:  
+#### DAG generation
+
+The first time you start to mine, geth will build a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) representation of the chain in the RAM. As your private chain consists of nothing but a genesis block, this goes super fast. If later you start mining on huge public chains this step will take some minutes.  
+Throughout the DAG generation you will repeatedly see some log: ```Generating DAG in progress```
+
+#### Reward
+
+Whenever your miner found a block, you will see the following:  
 
         Commit new mining work  
         Successfully sealed new block  
 
 Also, every time you see this, your balance has increased by one ether.  
-Unfortunately the ether you are holding here are of no actual value. The only reason the mining went so fast is that you are the only kid in town, concerning this local chain.
 
 ### Account specific mining
 
@@ -248,11 +252,10 @@ The following example prints a list of all account balances. See [here](https://
         };  
 
 Once you have imported a script, you can directly call functions defined within. In regard to the above listing, this would be:  
-```
-checkAllBalances();
-```
 
-## Programmatic Access
+        checkAllBalances();
+
+## Basic Programmatic Access
 
 This far all described blockchain interactions were effectuated manually. This means whenever we wanted to acces the blockchain we used using geth or its built-in console. Apart from those, ```geth``` offers two more ways to access the blockchain. 
 
@@ -277,11 +280,11 @@ By now you should already have this covered. If not, create your [private blockc
 
 #### Run an HTTP-enabled geth node
 
-As *RPC* is a network-protocol, you could send your HTTP commands to any availbale *RPC*-enabled node. In the context of a local chain however you are the only player in town. You will therefore have to power up your own proxy node. Remember, this node must keep running throughout the entire execution of your program.
+As *RPC* is a network-protocol, you could send your HTTP commands to any availbale *RPC*-enabled node. Unfortunately in the context of a private local chain there are none around. You have to operate your own node for all proxied access. Remember, this node must keep running throughout the entire execution of your program.  
 
         geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console
 
-As you can see the ```geth``` is instructed to power up the RPC *interface* (```--rpcapi```, ```--rpc```).  
+The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up the *RPC interface* ().  
 
 For the exact meaning of the remaining parameters, see [here]()https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
