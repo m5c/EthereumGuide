@@ -93,23 +93,25 @@ To do so we first need to create a new blockchain. Each blockchain starts with a
 Navigate to your *ethereum base directory* and create a file named ```genesis.json```.  
 Paste the following content into that file. **C&P is not enough, you still have to modify the content afterwards!**
 
-        {
-            "alloc": {},
-            "coinbase": "0x0000000000000000000000000000000000000000",
-            "config": {
-                "chainId": 1608199012345,
-                "eip155Block": 0,
-                "eip158Block": 0,
-                "homesteadBlock": 0
-            },
-            "difficulty": "0x20000",
-            "extraData": "",
-            "gasLimit": "0x2fefd8",
-            "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-            "nonce": "0x0000000000000042",
-            "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-            "timestamp": "0x00"
-        }
+```json
+    {
+        "alloc": {},
+        "coinbase": "0x0000000000000000000000000000000000000000",
+        "config": {
+       	    "chainId": 1608199012345,
+       	    "eip155Block": 0,
+       	    "eip158Block": 0,
+       	    "homesteadBlock": 0
+        },
+        "difficulty": "0x20000",
+        "extraData": "",
+        "gasLimit": "0x2fefd8",
+        "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000042",
+        "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "timestamp": "0x00"
+    }
+```
 
 Essentially, this description nails down the characteristics of your new custom blockchain. However in a network, there must not be two different chains using the same *chainId*. To avoid that, edit the *chainId* value and fill in a number that is sufficiently high and unique, e.g. your birthday + 12345, then save the file.
 
