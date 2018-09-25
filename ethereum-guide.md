@@ -19,7 +19,10 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * Install geth:  
 
-        emerge -a net-p2p/go-ethereum
+```bash
+    emerge -a net-p2p/go-ethereum
+```
+
 *[Ubuntu equivalent](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)*
 
  * Download Web3J, extract and create terminal reference:  
@@ -38,14 +41,19 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * Install solidity:  
 
-        emerge -a dev-lang/solidity
+```bash
+    emerge -a dev-lang/solidity
+```
+
 *[Ubuntu equivalent](https://solidity.readthedocs.io/en/v0.4.21/installing-solidity.html)*
 
 #### Mac
 
  * Install [Brew](https://brew.sh/), the mac package manager.  
 
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```bash
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
  * Install geth:
 
