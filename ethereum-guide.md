@@ -187,13 +187,16 @@ Of course you do not need to inspect the file system to find your new account yo
         Account #0: {564a2f909e604268d865654086a36f19ac915b07} keystore:///home/schieder/.ethereum/keystore/UTC--2018-04-11T13-03-56.222342097Z--564a2f909e604268d865654086a36f19ac915b07
         
 
-## Mining
+## Balance
 
 *Additional information and commands realted to mining can be found [here](https://github.com/ethereum/go-ethereum/wiki/mining) and [here](https://github.com/turboprep/geth-tutorial).*
 
-### Balance
+Each account has an amount of ether attached. This amount can be considered as *funds*. Stakeholders who want to deposit something into the blockchain must pay a tiny amount of ether to do so.  
+Without ether, accounts are very limited in their actions.
 
-Each account has an amount of ether attached. To query your balance, open the console with  
+### Querrying
+
+Once you have an account, you can easily find out the attached balance. Open the console with  
 
         geth --nodiscover console  
 
