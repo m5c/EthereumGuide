@@ -218,7 +218,9 @@ If you prefer a direct conversion into *Ether*, wrap your command with a call to
 
 By now you have not done any mining. Therefore you will see a sad output of ```0``` either way.
 
-### Mine
+### Mining
+
+Mining is the most straighforward way to obtain ether. In essential it means to invest computational power to keep the blockchain alive. Appending the chain by new blocks is puzzle. The miner who first solves it is rewarded with a single ether added to his balance.
 
 You have two options for mining. 
 
