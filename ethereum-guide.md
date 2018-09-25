@@ -223,7 +223,7 @@ Alternatively you can refer to the index of the account. To order corresponds to
 By default geth mines with ounly one CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totaly reasonable.)  
 Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use multiple CPU cores for mining.  
 
-```geth --mine --minerthreads=4```
+```    geth --mine --minerthreads=4```
 
 ## Custom functions
 
