@@ -9,7 +9,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * [Geth](https://github.com/ethereum/go-ethereum/wiki/geth): Command line interface for running a full ethereum node.
  * [Web3J](https://web3j.io/): Java library for integrating with nodes on Ethereum blockchains.
- * [Solidity](https://solidity.readthedocs.io/en/v0.4.25/): Language for implementing smart contracts, designed to target the Ethereum Virtuam Machine.
+ * [Solidity](https://solidity.readthedocs.io/en/v0.4.25/): Language for implementing smart contracts, designed to target the Ethereum Virtual Machine.
 
 ### Installation
 
@@ -209,10 +209,8 @@ To actually start mining you have now two options. You can pass over the geth co
 
 ### Multi-Core
 
-```
-geth --mine --minerthreads=4  
-geth --mine --minerthreads=4  --etherbase 1
-```  
+        geth --mine --minerthreads=4  
+        geth --mine --minerthreads=4  --etherbase 1
 
 As soon as you launch this geth will build a local DAG (direct acyclic graph) representation that must be held in the RAM prior to the actual mining, be pationent this takes about a minute and you will repeatedly see log ```Generating DAG in progress``` running through the console. (takes about 2.5 minutes).  
 Afterwards you will pretty soon see the results of your mining work:  
