@@ -259,7 +259,7 @@ Once you have imported a script, you can directly call functions defined within.
 
 ## Basic Programmatic Access
 
-This far all described blockchain interactions were effectuated manually. This means whenever you accessed the blockchain, you did so used either the ```geth``` command or its built-in console. But geth can also expose its functionality and work as a proxy. The two most outstanding ways to achieve this are:. 
+This far all described blockchain interactions were effectuated manually. This means whenever you accessed the blockchain, you did so used either the ```geth``` command or its built-in console. But geth can also expose its functionality and work as a proxy. The two most outstanding ways to achieve this are:  
 
  * Using *RPCs* (Remote Procedure Calls)  
 Geth acts as a proxy on a given port and ip. Can be seen as the more generic one, for it allows accessing a remote node over a network connection.
@@ -284,7 +284,9 @@ By now you should already have this covered. If not, create your [private blockc
 
 As *RPC* is a network-protocol, you could send your HTTP commands to any availbale *RPC*-enabled node. Unfortunately in the context of a private local chain there are none around. You have to operate your own node for all proxied access. Remember, this node must keep running throughout the entire execution of your program.  
 
-        geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console
+```bash
+geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console  
+```
 
 The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up the *RPC interface* ().  
 
