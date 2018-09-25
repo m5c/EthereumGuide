@@ -279,9 +279,7 @@ By now you should already have this covered. If not, create your [private blockc
 
 As *RPC* is a network-protocol, you could send your HTTP commands to any availbale *RPC*-enabled node. In the context of a local chain however you are the only player in town. You will therefore have to power up your own proxy node. Remember, this node must keep running throughout the entire execution of your program.
 
-```
-geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console
-```  
+        geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console
 
 As you can see the ```geth``` is instructed to power up the RPC *interface* (```--rpcapi```, ```--rpc```).  
 
