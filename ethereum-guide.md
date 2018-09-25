@@ -231,6 +231,7 @@ You have two options for mining.
 #### DAG generation
 
 The first time you start to mine, geth will build a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) representation of the chain in the RAM. As your private chain consists of nothing but a genesis block, this goes super fast. If later you start mining on huge public chains this step will take some minutes.  
+
 Throughout the DAG generation you will repeatedly see some log: ```Generating DAG in progress```
 
 #### Reward
