@@ -220,7 +220,7 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 
 ### Mining
 
-Mining is the most straighforward way to obtain ether. In essential it means to invest computational power to keep the blockchain alive. Appending the chain by new blocks is puzzle. The miner who first solves it is rewarded with a single ether added to his balance.
+Mining is the most straighforward way to obtain ether. In essential it means to invest computational power to keep the blockchain alive. Appending the chain by new blocks is nothing a puzzle. The miner who first resolves it is immediately rewarded by a single ether.
 
 You have two options for mining. 
 
@@ -242,7 +242,7 @@ Whenever your miner found a block, you will see the following:
     Successfully sealed new block  
 ```
 
-Also, every time you see this, your balance has increased by one ether.  
+This implicitly means one ether was added to your account.
 
 ### Account specific mining
 
