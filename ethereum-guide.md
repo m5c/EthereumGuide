@@ -308,11 +308,11 @@ Though vanilla Java provides utilities for HTTP communication, we will use the `
 To integrate ```web3j``` into a maven project, add the following dependencies to your ```pom.xml```: 
 
     
-    <dependency>
-        <groupId>org.web3j</groupId>
-        <artifactId>core</artifactId>
-        <version>3.3.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.1</version>
+        </dependency>
 
 ### Java (Hello-world-alike-thingy)
 
