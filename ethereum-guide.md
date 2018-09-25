@@ -193,9 +193,11 @@ Each account has an amount of ether attached. To query your balance, open the co
 *Note: When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctr-C```. ```Ctr-D``` brings you back to the parent bash.*
 
 To get your balance in *Wei*, type:  
+
 ```eth.getBalance("0x...hashofyourcoounthere")```  
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
+
 ```web3.fromWei(eth.getBalance(eth.coinbase), "ether")```   
 
 *Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
