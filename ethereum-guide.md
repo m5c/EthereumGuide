@@ -147,7 +147,7 @@ At any given moment you can list the available accounts, using:
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
 
-### <a name="accountcreation"></a> Creation
+### <a name="creation"></a> Creation
 
 The ```geth account new``` command adds a new account. When prompted enter the same password twice:  
 
@@ -273,7 +273,7 @@ Before using ```geth```s *RPC* functionality from a high-level programming langu
 
 #### Access to an account
 
-By now you should already have this covered. If not, create your [private blockchain](#privatechain), create an [account](#accountcreation), then [mine](#mining) until you have about 20 ether. 
+By now you should already have this covered. If not, create your [private blockchain](#privatechain), create an [account](#creation), then [mine](#mining) until you have about 20 ether. 
 
 #### Run an HTTP-enabled geth node
 
