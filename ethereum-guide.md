@@ -118,7 +118,7 @@ Essentially, this description nails down the characteristics of your new custom 
 
 For an explanation of the remaining fields, [look here](https://ethereum.stackexchange.com/questions/2376/what-does-each-genesis-json-parameter-mean).
 
-### Blockchain instantiation
+### <a name="privatechain"></a> Blockchain instantiation
 
 Next instantiate a blockchain, using this genesis block:  
 
@@ -147,7 +147,7 @@ At any given moment you can list the available accounts, using:
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
 
-### Creation
+### <a name="accountcreation"></a> Creation
 
 The ```geth account new``` command adds a new account. When prompted enter the same password twice:  
 
@@ -181,7 +181,7 @@ Each account has an amount of ether attached. To query your balance, open the co
 
         geth --nodiscover console  
 
-*Note: By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look our for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
+*Note: By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look out for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
 
 *Note: When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctr-C```. ```Ctr-D``` brings you back to the parent bash.*
 
@@ -197,7 +197,7 @@ If you prefer a direct conversion into *Ether*, wrap your command with a call to
 
 By now you have not done any mining. Therefore you will see a sad output of ```0``` either way.
 
-### Mine
+### <a name="mining"></a>  Mine
 
 You have two options for mining. You can pass over the geth console (type ```miner.start()```) or you can launch  geth with the ```--mine``` option.  
 The first time you start to mine, geth will build a local DAG (direct acyclic graph) representation in the RAM. As your chain is empty this goes super fast, but if later you try to mine on public chains this step may take a while. Throughout the DAG generation you will repeatedly see log ```Generating DAG in progress``` running through the console. Once the DAG generation is complete your geth instance tries to build a new block.
@@ -269,11 +269,11 @@ This guide covers *RPC* access, only.
 Before using ```geth```s *RPC* functionality from a high-level programming language, you must ensure that...
 
  * ... you have access to an account with some ether.
- * ... you have access to an *RPC* enabled geth node.
+ * ... you have access to an *RPC-enabled* geth node.
 
 #### Access to an account
 
-By now you should already have this covered. If not, create your private blockchain, create an account, then mine a bit. See instructions further above.
+By now you should already have this covered. If not, create your [private blockchain](#privatechain), create an [account](#accountcreation), then [mine](#mining) until you have about 20 ether. 
 
 #### Run an HTTP-enabled geth node
 
@@ -287,7 +287,7 @@ As you can see the ```geth``` is instructed to power up the RPC *interface* (```
 
 For the exact meaning of the remaining parameters, see [here]()https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
-*Note: You might wonder why you power up the node in mining mode. Reason is that you can only store transactions in the blockchain, if there is someone who provides the blocks to wrap your transactions. A blockchain without miners is "dead". If you forget the ```--mine``` option, your programs will stall whenever they attempt to do transactions.*
+*Note: You might wonder why you power up the node in mining mode. Reason is that you can only store transactions in the blockchain, if there is someone who provides the blocks to wrap your transactions. A blockchain without miners is "dead". If you forget the ```--mine``` option, your programs will stall whenever they attempt to effectuate a transactions.*
 
 
 #### Curl
