@@ -266,7 +266,7 @@ In the previous sections you already used ```geth console``` to access geths fun
 Loading such a file is fairly easy, simply type in your console:  
 
 ```javascript
-loadScript("/path/to/your/custom/function.js")
+    loadScript("/path/to/your/custom/function.js")
 ```  
 
 The following example prints a list of all account balances. See [here](https://ethereum.gitbooks.io/frontier-guide/listing_accounts.html) for the original.
