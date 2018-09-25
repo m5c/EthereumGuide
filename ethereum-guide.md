@@ -273,6 +273,13 @@ Alternatively you can refer to the index of the account. The order corresponds t
     geth account list
 ```
 
+### Transfering Ether
+
+Another way to boost an accounts balance is to transfere ether from another account. Of course it is that other account who initiates the transaction:
+
+```bash
+    ADD CODE FOR TRANSACTION HERE
+```
 
 
 ## Custom functions
