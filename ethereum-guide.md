@@ -149,9 +149,7 @@ As you have not yet added an account you will see the above warning. So lets see
 
 ### Creation
 
-The  
-```geth account new```  
-command adds a new account. When prompted enter the same password twice:  
+The ```geth account new``` command adds a new account. When prompted enter the same password twice:  
 
         geth account new  
         Your new account is locked with a password. Please give a password. Do not forget this password.  
