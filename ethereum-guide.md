@@ -196,7 +196,12 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 
 ### Mine
 
-You have two options for mining. You can pass over the geth console (type ```miner.start()```) or you can launch  geth with the ```--mine``` option.  
+You have two options for mining. 
+
+ * Use the geth console and type:
+        miner.start()
+
+ * Launch geth with the ```--mine``` option.  
 
 #### DAG generation
 
