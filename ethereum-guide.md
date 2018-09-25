@@ -194,7 +194,7 @@ Each account has an amount of ether attached. To query your balance, open the co
 
 To get your balance in *Wei*, type:  
 
-```eth.getBalance("0x...hashofyourcoounthere")```
+```eth.getBalance("0x...hashofyourcoounthere")```  
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
 
