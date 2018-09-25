@@ -244,7 +244,10 @@ Also, every time you see this, your balance has increased by one ether.
 If you have more then one account you must specify which account you want to mine for. There is always a default account (query by typing ```eth.coinbase```) on the console. Unless another account is specified, all gained ether will be mined for that defaukt account. To override the target account, specify a custom etherbase wehen launching ```geth```:
         --etherbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff'  
 Alternatively you can refer to the index of the account. To order corresponds to the timestamps of account creation. You can easily look it up using:  
-        geth account list
+
+```bash
+    geth account list
+```
 
 
 ### Multi-Core
