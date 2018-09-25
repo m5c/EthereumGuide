@@ -213,8 +213,10 @@ Throughout the DAG generation you will repeatedly see some log: ```Generating DA
 
 Whenever your miner found a block, you will see the following:  
 
-        Commit new mining work  
-        Successfully sealed new block  
+```bash
+    Commit new mining work  
+    Successfully sealed new block  
+```
 
 Also, every time you see this, your balance has increased by one ether.  
 
