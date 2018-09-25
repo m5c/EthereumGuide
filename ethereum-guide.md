@@ -207,7 +207,7 @@ Whenever a block was found, you will see the following:
         Commit new mining work  
         Successfully sealed new block  
 
-Also, every time you see this your balance increases by one ether.  
+Also, every time you see this, your balance has increased by one ether.  
 Unfortunately the ether you are holding here are of no actual value. The only reason the mining went so fast is that you are the only kid in town, concerning this local chain.
 
 ### Account specific mining
