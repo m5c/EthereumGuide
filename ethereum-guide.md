@@ -69,8 +69,10 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * Install solidity:  
 
-        brew install solidity  
-        brew linkapps solidity  
+```bash
+    brew install solidity  
+    brew linkapps solidity  
+```
 
 #### Windows
 
