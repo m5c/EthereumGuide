@@ -330,7 +330,9 @@ For the exact meaning of the remaining parameters, see [here]()https://ethereum.
 
 You can easily test access to your node using ```curl```. More information [here](https://github.com/ethereum/wiki/wiki/JSON-RPC).
 
-        curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x720c0908c38b1250aaeb05b999e14cc50e1134e4", "latest"],"id":1}' http://localhost:8545 
+```bash
+    curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x720c0908c38b1250aaeb05b999e14cc50e1134e4", "latest"],"id":1}' http://localhost:8545 
+```
 
 ### Java Access
 
