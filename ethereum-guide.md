@@ -202,7 +202,7 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 You have two options for mining. You can pass over the geth console (type ```miner.start()```) or you can launch  geth with the ```--mine``` option.  
 The first time you start to mine, geth will build a local DAG (direct acyclic graph) representation in the RAM. As your chain is empty this goes super fast, but if later you try to mine on public chains this step may take a while. Throughout the DAG generation you will repeatedly see log ```Generating DAG in progress``` running through the console. Once the DAG generation is complete your geth instance tries to build a new block.
 
-Whenever a block was found, you will see the follwing:  
+Whenever a block was found, you will see the following:  
 
         Commit new mining work  
         Successfully sealed new block  
