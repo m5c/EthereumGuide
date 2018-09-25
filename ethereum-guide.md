@@ -200,18 +200,6 @@ For by now you have not done any mining you will see a sad output of ```0``` eit
 ### Mine
 
 To actually start mining you have now two options. You can pass over the geth console (simply type ```miner.start()```) or you can restart geth with the ```--mine``` option.
-
-*Note: If you have more then one account you must specify which account you want to mine for. There is always a default account (query by typing ```eth.coinbase```) on the console. Unless another account is specified, all gained ether will be mined for that defaukt account. To override the target account, specify a custom etherbase wehen launching geth:*  
-```--etherbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff'```  
-*Alternatively you can refer to the index of the account. To order corresponds to the timestamps of account creation. You can easily look it up using:*  
-```geth account list```
-
-
-### Multi-Core
-
-        geth --mine --minerthreads=4  
-        geth --mine --minerthreads=4  --etherbase 1
-
 As soon as you launch this geth will build a local DAG (direct acyclic graph) representation that must be held in the RAM prior to the actual mining, be pationent this takes about a minute and you will repeatedly see log ```Generating DAG in progress``` running through the console. (takes about 2.5 minutes).  
 Afterwards you will pretty soon see the results of your mining work:  
 ```
@@ -220,16 +208,24 @@ Successfully sealed new block
 ```
 Every time you see this, you have obtained an ether. Kill the mining after a while and re-check your balance, this should now be an amount superior to 0.  
 
-```  
-geth --nodiscover console  
-geth --nodiscover console --etherbase 1   
-web3.fromWei(eth.getBalance(eth.coinbase), "ether")  
-=> 90
-```
+Unfortunately the ether you are holding here are of no actual value. The only reason the mining went so fast is that you are the only kid in town, concerning this local chain.
 
-CONGRATULATIONS YOU ARE RICH NOW... at least according to your private local blockchain :-P
+### Account specific mining
 
-### Custom functions
+If you have more then one account you must specify which account you want to mine for. There is always a default account (query by typing ```eth.coinbase```) on the console. Unless another account is specified, all gained ether will be mined for that defaukt account. To override the target account, specify a custom etherbase wehen launching ```geth```:
+        --etherbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff'  
+Alternatively you can refer to the index of the account. To order corresponds to the timestamps of account creation. You can easily look it up using:  
+        geth account list
+
+
+### Multi-Core
+
+By default geth mines with ounly one CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totaly reasonable.)  
+Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use multiple CPU cores for mining.
+
+        geth --mine --minerthreads=4  
+
+## Custom functions
 
 In the previous sections you already used ```geth console``` to access geths functions from the built in command line. You can extend the supplied set by your our own custom functions. Following the consoles javascript syntax you can then dynamically load and call functionality defined in external files.  
 
@@ -347,14 +343,6 @@ Java console log (on System.out.println(transactionReceipt)):
 ```
 
 You can see that recipient and block-ID match.  
-
-## Curl (REMOVE)
-
-You can also access the blockchain and interact with geth using the RPC api. To do so, power up geth with the ```--rpc option```:  
-
-        geth --rpcapi personal,db,eth,net,web3 --rpc
-
-Then query using curl and json syntax:  
 
 
 ## Smart Contracts
