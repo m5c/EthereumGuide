@@ -118,7 +118,7 @@ Essentially, this description nails down the characteristics of your new custom 
 
 For an explanation of the remaining fields, [look here](https://ethereum.stackexchange.com/questions/2376/what-does-each-genesis-json-parameter-mean).
 
-### <a name="privatechain"></a> Blockchain instantiation
+### Blockchain instantiation
 
 Next instantiate a blockchain, using this genesis block:  
 
@@ -147,7 +147,7 @@ At any given moment you can list the available accounts, using:
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
 
-### <a name="creation"></a> Creation
+### Creation
 
 The ```geth account new``` command adds a new account. When prompted enter the same password twice:  
 
@@ -197,7 +197,7 @@ If you prefer a direct conversion into *Ether*, wrap your command with a call to
 
 By now you have not done any mining. Therefore you will see a sad output of ```0``` either way.
 
-### <a name="mining"></a>  Mine
+### Mine
 
 You have two options for mining. You can pass over the geth console (type ```miner.start()```) or you can launch  geth with the ```--mine``` option.  
 The first time you start to mine, geth will build a local DAG (direct acyclic graph) representation in the RAM. As your chain is empty this goes super fast, but if later you try to mine on public chains this step may take a while. Throughout the DAG generation you will repeatedly see log ```Generating DAG in progress``` running through the console. Once the DAG generation is complete your geth instance tries to build a new block.
@@ -273,7 +273,7 @@ Before using ```geth```s *RPC* functionality from a high-level programming langu
 
 #### Access to an account
 
-By now you should already have this covered. If not, create your [private blockchain](#privatechain), create an [account](#accounts), then [mine](#mining) until you have about 20 ether. 
+By now you should already have this covered. If not, create your [private blockchain](#chains), create an [account](#accounts), then [mine](#mining) until you have about 20 ether. 
 
 #### Run an HTTP-enabled geth node
 
