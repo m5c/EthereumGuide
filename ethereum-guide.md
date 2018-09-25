@@ -186,7 +186,7 @@ Account #0: {564a2f909e604268d865654086a36f19ac915b07} keystore:///home/schieder
 
 Each account has an amount of ether attached. To query your balance, open the console with  
 
-```geth --nodiscover console```  
+        geth --nodiscover console  
 
 *Note: By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look our for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
 
@@ -194,11 +194,11 @@ Each account has an amount of ether attached. To query your balance, open the co
 
 To get your balance in *Wei*, type:  
 
-```eth.getBalance("0x...hashofyourcoounthere")```  
+        eth.getBalance("0x...hashofyourcoounthere")  
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
 
-```web3.fromWei(eth.getBalance(eth.coinbase), "ether")```   
+        web3.fromWei(eth.getBalance(eth.coinbase), "ether")  
 
 *Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
