@@ -247,7 +247,7 @@ This implicitly means one ether was added to your account.
 #### Multi-Cores
 
 By default geth mines with only a single CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totaly reasonable.)  
-Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use multiple CPU cores for mining.  
+Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use more CPU cores for the mining.  
 
 ```bash
     geth --mine --minerthreads=4
