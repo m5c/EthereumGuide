@@ -195,19 +195,19 @@ If you prefer a direct conversion into *Ether*, wrap your command with a call to
 
 *Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
-For by now you have not done any mining you will see a sad output of ```0``` either way.
+By now you have not done any mining. Therefore you will see a sad output of ```0``` either way.
 
 ### Mine
 
-To actually start mining you have now two options. You can pass over the geth console (simply type ```miner.start()```) or you can restart geth with the ```--mine``` option.
-As soon as you launch this geth will build a local DAG (direct acyclic graph) representation that must be held in the RAM prior to the actual mining, be pationent this takes about a minute and you will repeatedly see log ```Generating DAG in progress``` running through the console. (takes about 2.5 minutes).  
-Afterwards you will pretty soon see the results of your mining work:  
-```
-Commit new mining work  
-Successfully sealed new block  
-```
-Every time you see this, you have obtained an ether. Kill the mining after a while and re-check your balance, this should now be an amount superior to 0.  
+You have two options for mining. You can pass over the geth console (type ```miner.start()```) or you can launch  geth with the ```--mine``` option.  
+The first time you start to mine, geth will build a local DAG (direct acyclic graph) representation in the RAM. As your chain is empty this goes super fast, but if later you try to mine on public chains this step may take a while. Throughout the DAG generation you will repeatedly see log ```Generating DAG in progress``` running through the console. Once the DAG generation is complete your geth instance tries to build a new block.
 
+Whenever a block was found, you will see the follwing:  
+
+        Commit new mining work  
+        Successfully sealed new block  
+
+Also, every thime you see this your balance increases by one ether.  
 Unfortunately the ether you are holding here are of no actual value. The only reason the mining went so fast is that you are the only kid in town, concerning this local chain.
 
 ### Account specific mining
