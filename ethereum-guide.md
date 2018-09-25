@@ -24,12 +24,15 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * Download Web3J, extract and create terminal reference:  
 
-        wget https://github.com/web3j/web3j/releases/download/v3.5.0/web3j-3.5.0.zip  
-        unzip web3j-3.5.0.zip  
-        rm web3j-3.5.0.zip  
-        echo '#!/bin/bash' >> ~/bin/web3j  
-        echo '~/web3j-3.5.0/bin/web3j "$@"' >> ~/bin/web3j  
-        chmod +x ~/bin/web3j
+```bash
+    wget https://github.com/web3j/web3j/releases/download/v3.5.0/web3j-3.5.0.zip  
+    unzip web3j-3.5.0.zip  
+    rm web3j-3.5.0.zip  
+    echo '#!/bin/bash' >> ~/bin/web3j  
+    echo '~/web3j-3.5.0/bin/web3j "$@"' >> ~/bin/web3j  
+    chmod +x ~/bin/web3j
+```
+
 *Note: Make sure the ~/bin/ directory is in your [PATH](https://opensource.com/article/17/6/set-path-linux).*
 
 
