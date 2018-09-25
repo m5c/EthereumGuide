@@ -244,7 +244,15 @@ Whenever your miner found a block, you will see the following:
 
 This implicitly means one ether was added to your account.
 
-### Account specific mining
+#### Multi-Cores
+
+By default geth mines with only a single CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totaly reasonable.)  
+Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use multiple CPU cores for mining.  
+
+```bash
+    geth --mine --minerthreads=4
+```
+#### Account Selection
 
 If you have more then one account you must specify which account you want to mine for. There is always a default account (query by typing ```eth.coinbase```) on the console. Unless another account is specified, all gained ether will be mined for that defaukt account. To override the target account, specify a custom etherbase wehen launching ```geth```:
         --etherbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff'  
@@ -255,14 +263,6 @@ Alternatively you can refer to the index of the account. To order corresponds to
 ```
 
 
-### Multi-Core
-
-By default geth mines with ounly one CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totaly reasonable.)  
-Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use multiple CPU cores for mining.  
-
-```bash
-    geth --mine --minerthreads=4
-```
 
 ## Custom functions
 
