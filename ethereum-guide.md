@@ -36,33 +36,31 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
 
  * Install solidity:  
-```
-emerge -a dev-lang/solidity  
-```  
+
+        emerge -a dev-lang/solidity  
+
 *[Ubuntu equivalent](https://solidity.readthedocs.io/en/v0.4.21/installing-solidity.html)*
 
 #### Mac
 
  * Install [Brew](https://brew.sh/), the mac package manager.  
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
  * Install geth:
-```
-brew update  
-brew upgrade  
-brew tap ethereum/ethereum  
-brew install ethereum  
-```
+
+        brew update  
+        brew upgrade  
+        brew tap ethereum/ethereum  
+        brew install ethereum  
+
  * Download Web3J, extract and create terminal reference:  
 *-Same as Linux instructions above-*
 
  * Install solidity:  
-```
-brew install solidity  
-brew linkapps solidity  
-```
+
+        brew install solidity  
+        brew linkapps solidity  
 
 #### Windows
 
