@@ -570,3 +570,177 @@ The string returned by this call, looks like:
 ```0xda87ac931d237a2fe1ef8e45abf79244c69e6a06```  
 Use this sting in the second agent to load the contract:  
 ```GeneratedContractClass.load("0xda87ac931d237a2fe1ef8e45abf79244c69e6a06", web3, credentials, GAS_PRICE, GAS_LIMIT);```
+
+## Clusters
+
+## C L U S T E R S...
+##Network setup:
+##[Actually two options: P2P, every machine own node, and RPC, only one mode, accessed remotely]
+##1) create A SINGLE private chain, genesis block etc...
+##-> if no "--datadir" is provided this instatiates in ~/Library/Ethereum/geth...  otherwise it replicates structure in specified dir:
+##toto/
+├── geth
+│   ├── chaindata
+│   │   ├── 000001.log
+│   │   ├── CURRENT
+│   │   ├── LOCK
+│   │   ├── LOG
+│   │   └── MANIFEST-000000
+│   └── lightchaindata
+│       ├── 000001.log
+│       ├── CURRENT
+│       ├── LOCK
+│       ├── LOG
+│       └── MANIFEST-000000
+└── keystore"
+##2) create private network that will SHARE this BC.
+##geth --datadir /Users/maex/Desktop/toto/ --networkid 1608199012345
+##networkid SHOULD be something unique to not conflict with existing networks -> irrelevant in LAN (?)
+##3) Access the blockchain:
+##3.1) same machine: (IPC, inter process communication)
+##> personal.newAccount()
+##Passphrase:
+##Repeat passphrase:
+##"0x2e9d394a1c51568bab2ff61eb073bbe13415aadf"
+##> eth.getBalance("0x2e9d394a1c51568bab2ff61eb073bbe13415aadf")
+##mine:
+##> miner.start()
+##...wait until DAG complete, something commited.
+##> miner.stop()
+##> eth.getBalance("0x2e9d394a1c51568bab2ff61eb073bbe13415aadf")
+3.2) from remote machine (RPC, remote procedure calls)
+-> CLuster: https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster
+https://ethereum.stackexchange.com/questions/12436/how-to-communicate-with-a-remote-node
+Power up: (unsure if this works?)
+geth --datadir /Users/maex/Desktop/toto/ --networkid 1608199012345 --rpc --rpcport "8545" --rpcaddr "0.0.0.0" --rpccorsdomain "*"
+https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth
+http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html
+https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-clusterGENESIS: -> shared chain can be any string (!), chain id can be any big random number!
+MAKE SURE TO USE THE SAME CONFIG FOR YOUR GETH COMMANDS! (chainname, id)
+WARNING II -> the genesis file has to be the exact same file, by means of hashing - semantically identical but differently son files DO NOT WORK!
+{
+    "alloc": {},
+    "coinbase": "0x0000000000000000000000000000000000000000",
+    "config": {
+        "chainId": 1608199012345,
+        "eip155Block": 0,
+        "eip158Block": 0,
+        "homesteadBlock": 0
+    },
+    "difficulty": "0x20000",
+    "extraData": "",
+    "gasLimit": "0x2fefd8",
+    "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "nonce": "0x0000000000000042",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "timestamp": "0x00"
+}
+INIT:
+Mac: cd Library/Ethereum/
+Linux: cd .ethereum
+        geth --datadir="sharedchain" init shared-genesis.json
+Expected structure:
+maex@Chartreuse:Ethereum $ tree sharedchain/
+sharedchain/
+├── geth
+│   ├── chaindata
+│   │   ├── 000002.log
+│   │   ├── CURRENT
+│   │   ├── CURRENT.bak
+│   │   ├── LOCK
+│   │   ├── LOG
+│   │   └── MANIFEST-000003
+│   └── lightchaindata
+│       ├── 000001.log
+│       ├── CURRENT
+│       ├── LOCK
+│       ├── LOG
+│       └── MANIFEST-000000
+└── keystore
+One ONE client (and only one!), start geth in console mode, create account, obtain some ether:
+geth --datadir="sharedchain" --networkid 1608199012345 --nodiscover console
+> personal.newAccount("maxou1")
+"0xed0ae7db863e9ce9afa43f028b596f4af06b20ad"
+> miner.start(1)
+Check balance, then abort geth
+> web3.fromWei(eth.getBalance(eth.coinbase), "ether")
+_NOTE: tree command should now list your account hash in the "keystore" of YOUR chain (sharedchain)!
+└── sharedchain
+    ├── geth
+    │   ├── LOCK
+    │   ├── chaindata
+    │   │   ├── 000004.ldb
+    │   │   ├── 000007.ldb
+    │   │   ├── 000008.log
+    │   │   ├── CURRENT
+    │   │   ├── CURRENT.bak
+    │   │   ├── LOCK
+    │   │   ├── LOG
+    │   │   └── MANIFEST-000009
+    │   ├── lightchaindata
+    │   │   ├── 000001.log
+    │   │   ├── CURRENT
+    │   │   ├── LOCK
+    │   │   ├── LOG
+    │   │   └── MANIFEST-000000
+    │   ├── nodekey
+    │   └── transactions.rlp
+    ├── history
+    └── keystore
+FIND OUT ENODE ID OF YOUR RUNNING GETH -> P2p handshake entry point (other nodes can attach to this.)
+> admin.nodeInfo.enode
+"enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
+
+NOW GO OFFLINE (you are starting a p2p connection. unless you have a good firewall you should not expose your PC to the entire wollt. Thats why we're using old school cable LAN for out network in class)
+Before connecting from other geth entity -> restart geth with following changes:
+add "--verbosity=4" Lowe number means less output, higher more. 4 is a reasonable setting for getting problems printed without having your entire screen flooded with logs.
+remove "--nodiscover" -> you want to use P2P functionality, right ;-)
+add "--ipcdisable" -> no need for interprocess communication, we want the nodes to interact over LAN
+add "--port 303XY", where X is count of your hexanome and Y the count of your PCs (so first pc is 1, second 2 , ...) -> reason is we must not have two machines with the same port for the P2P to work.
+add "--rpcport 81XY", same reason (remote procedure calls need a unique target)
+add "--rpcaddr 192.168.a.b" , matching the physical address of your ethernet card.
+add "--netrestrict 192.168.10.0/24" because we want to start a P2P net only in the LAN, noit share it with the entire world.
+so finally you should have (mac, machine 1)
+ geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.10.1 --netrestrict 192.168.10.0/24 console
+and (linux, machine 2)
+ geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
+
+Alright last thing you need to do is to sync with an existing node. Therefore we use the enode-id we queried before:
+But careful! -> the enode string still contains a self reference "[::]" which is nothing else but "127.0.0.1", the localhost loopback ip. For the node who printed this string it was correct, but if we want to connect from another node it has to be changed for the actual ip. So if the first machine hat 192.168.5.1, we can now connect using the enode id:
+"enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0"
+Simply type:
+> admin.addPeer("enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0")
+Check the log outputs for error / success messages.
+Ideal you see something like:
+DEBUG[09-19|13:51:54] Ethereum peer connected                  id=175cb35c728eb654 conn=staticdial name=Geth/v1.8.14-stable/darwin-amd64/go1.10.3
+This was the output from the linux machine connecting to a geth node on a mac -> "darwin"
+Check the output of:
+> admin.peers
+If it returns an empty list: "[]" it did not work, if you see
+[{
+    caps: ["eth/62", "eth/63"],
+    id: "175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51",
+    name: "Geth/v1.8.14-stable/darwin-amd64/go1.10.3",
+    network: {
+      localAddress: "192.168.5.2:33094",
+      remoteAddress: "192.168.5.1:30301"
+    },
+    protocols: {
+      eth: {
+        difficulty: 3825280,
+        head: "0x96127b538059d60a5b757c5da074e05d510d60f6cfb001f79dfd23fad9296351",
+        version: 63
+      }
+    }
+}]
+You're good to go. :-)
+
+
+mac
+geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=3 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.5.1 --nodiscover console
+
+lin
+geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=3 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.5.2 --nodiscover console
+
+FIREWALL SETTINGS???
+
