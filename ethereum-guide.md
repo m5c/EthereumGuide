@@ -516,6 +516,7 @@ This will generate four files:  (Correlates to the ```contract``` signatures of 
  * ```../build/buffer.abi```  
 
 **TODO: get rid of warnings at compilation**
+**TODO: adapt command and filenames (buffer - helloworld)**
 
 ### Build JAVA wrappers
 
