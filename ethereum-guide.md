@@ -516,6 +516,8 @@ This will generate four files:  (Correlates to the ```contract``` signatures of 
  * ```../build/buffer.bin```  
  * ```../build/buffer.abi```  
 
+**TODO: get rid of warnings at compilation**
+
 #### Binaries to java classes
 
 Do not code the java wrappers yourself. Web3J handles that for you. If not yet done, [download the web3J command line tools](https://github.com/web3j/web3j/releases/tag/v1.0.4).  
