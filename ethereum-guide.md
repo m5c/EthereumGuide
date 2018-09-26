@@ -370,7 +370,7 @@ The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up t
 
 For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
-*Note: As mentioned in the [balance](#balance) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp will block for all interactions that require [transactions](#transactions).*
+*Note: As mentioned in the ["Transfering Ether"](#transfering-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp will block for all interactions that require [transactions](#transactions).*
 
 
 #### Test accessing your node
