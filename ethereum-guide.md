@@ -501,11 +501,13 @@ Solidity code by itsel is neither executable by the EVM (ethereum virtual machin
 First of all you need a solidity compiler. Look out for the corresponding package of your OS. For ```gentoo``` this would be:  
 ```emerge -a /dev-lang/solidity```
 
-Presuming that you have an Intellij-wbe3J project at ```~/IdeaProjects/web3Jdemo/``` you should place your solidity code at:
-```~/IdeaProjects/web3Jdemo/contracts/solidity/MyContract.sol``` 
+Presuming that you have an Intellij-wbe3J project at ```~/IdeaProjects/web3Jdemo/``` you should place your solidity code at ```~/IdeaProjects/web3Jdemo/contracts/solidity/MyContract.sol``` 
 
-```cd``` into that directory then compile your contract. Make sure the output directpry is set to ```../build```  
-```solc MyContract.sol --bin --abi --optimize -o ../build```
+Next ```cd``` into that directory then compile your contract. Make sure the output directory is set to ```../build```  
+
+```bash
+    solc MyContract.sol --bin --abi --optimize -o ../build
+```
 
 This will generate four files:  (Correlates to the ```contract``` signatures of your solitude file.)
 
