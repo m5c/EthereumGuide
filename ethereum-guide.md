@@ -1,4 +1,4 @@
-# Hands-On   E-T-H-E-R-E-U-M    Reference
+# Hands-On   E-T-H-E-R-E-U-M    Guide
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
 [Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)
 ## Machine Setup
@@ -206,7 +206,7 @@ Once you have an account, you can easily find out the attached balance. Open the
 
 To get your balance in *Wei*, type:  
 
-        eth.getBalance("0x...hashofyourcoounthere")  
+        eth.getBalance("0x...hashofyouraccounthere")  
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
 
