@@ -306,7 +306,7 @@ If you forget to unlock the senders account or exceed the authorized time frame 
 
 
 
-## Custom functions
+## Custom Functions
 
 In the previous sections you already used ```geth console``` to access geths functions from the built in command line. You can extend the supplied set by your our own custom functions. Following the consoles javascript syntax you can then dynamically load and call functionality defined in external files.  
 
