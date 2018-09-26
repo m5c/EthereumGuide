@@ -439,7 +439,7 @@ Also, you will be able to track the execution of your program on the debug outpu
     INFO [09-26|14:43:33.350] Submitted transaction                    fullhash=0x08026e37dcdec6790da17773f226c3e9190305f9b63f9c0aa0b025280057e2de recipient=0xd929a310108EA93d2D82DF4A74763eD1316F94Fb
 ```
 
-You can directly store the return value of the third line in a transaction receipt object, within in your java code. More information on using the web3j API, code examples [here](https://web3j.readthedocs.io/en/latest/getting_started.html).
+You can directly store the return value of the third line in a transaction receipt object, within in your java code. More information on using the web3j API and many great code examples [here](https://web3j.readthedocs.io/en/latest/getting_started.html).
 
 ## Smart Contracts
 
