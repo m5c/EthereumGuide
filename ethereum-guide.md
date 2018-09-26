@@ -368,18 +368,20 @@ As *RPC* is a network-protocol, you could send your HTTP commands to any availba
 
 The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up the *RPC interface* ().  
 
-For the exact meaning of the remaining parameters, see [here]()https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
+For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
 *Note: You might wonder why you power up the node in mining mode. Reason is that you can only store transactions in the blockchain, if there is someone who provides the blocks to wrap your transactions. A blockchain without miners is "dead". If you forget the ```--mine``` option, your programs will stall whenever they attempt to effectuate a transactions.*
 
 
 #### Test accessing your node
 
-You can easily test access to your node using ```curl```. More information [here](https://github.com/ethereum/wiki/wiki/JSON-RPC).
+You can easily test access to your node using ```curl```. More information [here](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_getbalance).
 
 ```bash
-    curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x720c0908c38b1250aaeb05b999e14cc50e1134e4", "latest"],"id":1}' http://localhost:8545 
+    curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x3c7b081d3e608525a2efb821e80d597cef7a435c", "latest"],"id":1}' http://localhost:8545 
 ```
+
+*Note: Reply to the above balance request is the amount in Wei in [hexadecimal format](https://www.rapidtables.com/convert/number/hex-to-decimal.html).*
 
 ### Java Access
 
