@@ -399,7 +399,7 @@ Easiest way is to set up your java project to use a [build automation tool](http
         <dependency>
             <groupId>org.web3j</groupId>
             <artifactId>core</artifactId>
-            <version>3.3.1</version>
+            <version>3.5.0</version>
         </dependency>
     ...
     </dependencies>
