@@ -278,13 +278,18 @@ Alternatively you can refer to the index of the account. The order corresponds t
 
 ### Transfering Ether
 
-Another way to boost an accounts balance is to transfere ether from another account. Of course it is that other account who initiates the transaction:
+Another way to boost an accounts balance is to transfere ether from another account. Before actually transfering the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 5 seconds, using the password ```abc123```.
 
 ```bash
-    eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(42, "ether")})
+    > web3.personal.unlockAccount(web3.personal.listAccounts[0],"abc123", 15)
+    true
+    > eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(42, "ether")})
+    INFO [09-26|09:52:24.639] Setting new local account                address=0x3c7b081d3e608525A2efB821e80d597Cef7a435c
+    INFO [09-26|09:52:24.640] Submitted transaction                    fullhash=0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754 recipient=0xd929a310108EA93d2D82DF4A74763eD1316F94Fb
+    "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-*Note: Instead of specifying source and target account by ```ethh.accounts[x]``` you can also use their hash-adresses (wrapped in ticks). Example: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*
+*Note: Instead of specifying source and target account by ```eth.accounts[x]``` you can also use hash-adresses wrapped in ticks: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*
 
 
 ## Custom functions
