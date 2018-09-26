@@ -387,7 +387,7 @@ You can easily test access to your node using ```curl```. More information [here
 
 This section indicates the minimum steps to hook up a Java project to an HTTP-enabled geth node.
 
-#### Libraries
+#### Web3j
 
 Though vanilla Java provides utilities for HTTP communication, we will use the ```web3j``` library to abstract this layer away from our code. 
 
@@ -407,11 +407,10 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 *Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
-#### Using web3j
+#### Programmatic access
 
-*Have a look at the [original Web3j getting started guide](https://web3j.readthedocs.io/en/latest/getting_started.html) for more code examples.*
+The simplest example is as always transfering ether from one account to another. Here are the required steps to implement this using ```web3j```.
 
-The following code snippet does three things:
  * Connect to a local node.  
 Default access is ```127.0.0.1:8545```. Make sure the port is not blocked by your firewall or another application.
 
@@ -421,6 +420,7 @@ You can look up the location by ```cd```ing to your *ethereum base dir*, then ru
  * Trigger the actual sending of etherum.
 This line may block a while depending on the cpu-power of your background miner. Typical response time is 15-20 seconds.
 
+Combined we end up with the following code snippet:  
 ```java
         // Connect to local node
         Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
