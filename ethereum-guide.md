@@ -352,7 +352,7 @@ For the exact meaning of the remaining parameters, see [here]()https://ethereum.
 *Note: You might wonder why you power up the node in mining mode. Reason is that you can only store transactions in the blockchain, if there is someone who provides the blocks to wrap your transactions. A blockchain without miners is "dead". If you forget the ```--mine``` option, your programs will stall whenever they attempt to effectuate a transactions.*
 
 
-#### Test access to your node
+#### Test accessing your node
 
 You can easily test access to your node using ```curl```. More information [here](https://github.com/ethereum/wiki/wiki/JSON-RPC).
 
