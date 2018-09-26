@@ -2,7 +2,7 @@
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
 [Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)
 
-*Note: This guide is under (Attribution-NonCommercial-ShareAlike 4.0 International)[https://creativecommons.org/licenses/by-nc-sa/4.0/] License.*
+*Note: This guide is under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.*
 
 ## Machine Setup
 
