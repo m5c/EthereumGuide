@@ -284,7 +284,7 @@ Another way to boost an accounts balance is to transfere ether from another acco
     eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(42, "ether")})
 ```
 
-*Note: You can also specify source and target account using the hash-adresses, wrapped in ticks. Example ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*
+*Note: Instead of specifying source and target account by ```ethh.accounts[x]``` you can also use their hash-adresses (wrapped in ticks). Example: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*
 
 
 ## Custom functions
