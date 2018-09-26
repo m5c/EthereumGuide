@@ -375,7 +375,7 @@ To integrate ```web3j``` into a maven project, add the following dependencies to
     </dependency>
 ```
 
-*Note: Some IDEs, (e.g. IntelliJ) wo not import maven settings by default. This means that your java code cannot use external librtaries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "enable auto-imports".*
+*Note: Some IDEs, (e.g. IntelliJ) by default do not automatically detect cahnges to your maven configuration files. This means that your java code cannot use external librtaries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "enable auto-imports".*
 
 ### Java (Hello-world-alike-thingy)
 
