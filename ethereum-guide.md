@@ -409,7 +409,7 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 #### Programmatic access
 
-The simplest example is as always transfering ether from one account to another. Here are the required steps to implement this using ```web3j```.
+The simplest example once more is transfering ether between accounts. Here are the required steps to implement this in java using ```web3j```.
 
  * Connect to a local node.  
 Default access is ```127.0.0.1:8545```. Make sure the port is not blocked by your firewall or another application.
