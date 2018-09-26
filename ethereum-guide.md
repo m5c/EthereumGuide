@@ -368,11 +368,15 @@ Though vanilla Java provides utilities for HTTP communication, we will use the `
 To integrate ```web3j``` into a maven project, add the following dependencies to your ```pom.xml```: 
 
 ```xml 
-    <dependency>
-        <groupId>org.web3j</groupId>
-        <artifactId>core</artifactId>
-        <version>3.3.1</version>
-    </dependency>
+    <dependencies>
+    ...
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+    ...
+    </dependencies>
 ```
 
 *Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external librtaries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "enable auto-imports".*
