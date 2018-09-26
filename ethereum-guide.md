@@ -289,9 +289,9 @@ Another way to boost an accounts balance is to transfere ether from another acco
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-PENDING...
+As you remember querrying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing it still has to be "arrive" in the blockchain. For that to happen it must still "wrapped" by a new block. More information on that [a little later](#Transactions).  
 
-*Note: Transactions are without effect until the blockchain was extended by a new block to embed them.*
+*Tl;dr: For your transfer to take place, mine at least one more block.*
 
 If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfer will be rejected.
 ```bash
