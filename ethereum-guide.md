@@ -366,7 +366,7 @@ As *RPC* is a network-protocol, you could send your HTTP commands to any availba
     geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console  
 ```
 
-The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up the *RPC interface* ().  
+The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up the *RPC interface*.  
 
 For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
