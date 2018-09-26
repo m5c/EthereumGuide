@@ -333,7 +333,7 @@ Before using ```geth```s *RPC* functionality from a high-level programming langu
  * ... you have access to an account with some ether.
  * ... you have access to an *RPC-enabled* geth node.
 
-#### Access to an account
+#### An account with some ether
 
 By now you should already have this covered. If not, create your [private blockchain](#chains), create an [account](#accounts), then [mine](#mining) until you have about 20 ether. 
 
