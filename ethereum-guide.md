@@ -278,7 +278,7 @@ Alternatively you can refer to the index of the account. The order corresponds t
 
 ### Transfering Ether
 
-Another way to boost an accounts balance is to transfere ether from another account. Before actually transfering the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 5 seconds, using the password ```abc123```.
+Another way to boost an accounts balance is to transfere ether from another account. Before actually transfering the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 15 seconds, using the password ```abc123```.
 
 ```bash
     > web3.personal.unlockAccount(web3.personal.listAccounts[0],"abc123", 15)
@@ -288,6 +288,17 @@ Another way to boost an accounts balance is to transfere ether from another acco
     INFO [09-26|09:52:24.640] Submitted transaction                    fullhash=0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754 recipient=0xd929a310108EA93d2D82DF4A74763eD1316F94Fb
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
+
+If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfert will be rejected.
+```bash
+    > eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(42, "ether")})
+    Error: authentication needed: password or unlock
+        at web3.js:3143:20
+        at web3.js:6347:15
+        at web3.js:5081:36
+        at <anonymous>:1:1
+```
+
 
 *Note: Instead of specifying source and target account by ```eth.accounts[x]``` you can also use hash-adresses wrapped in ticks: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*
 
