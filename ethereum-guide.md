@@ -443,6 +443,8 @@ You can directly store the return value of the third line in a transaction recei
 
 ## Smart Contracts
 
+*Everything you need to know any many more code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
+
 A littel word on what SCs are. - what are they and why should I care.
 
 ### Transactions
