@@ -407,19 +407,16 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 *Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
-### Java (Hello-world-alike-thingy)
+#### Using web3j
 
 *Have a look at the [original Web3j getting started guide](https://web3j.readthedocs.io/en/latest/getting_started.html) for more code examples.*
 
-Ethereum supports three kinds of transactions:
+The following code snippet does three things:
+ * Connect to a local node.  
+Default access is ```127.0.0.1:8545```. Make sure the port is not blocked.
 
- * Transfer ether from one account to another
- * Deposit a smart contract on the blockchain
- * Trigger a smart contract that already resides on the BC
-
-For any of them to be persisted, the transaction must be embedded into a newly added block. This is why it is crucial to run geth in mining mode, throughout the program execution.  
-Here comes a java code snippet for an ethereum-transfering transaction. If there are no miners, the program will hang on the last line.
-
+ * Load credentials for an existing account, using its physical location and password.  
+You can easily look your location by `cd`ing to your *ethereum base dir* and running the ```tree``` command. ([Mac instructions for installation](https://rschu.me/list-a-directory-with-tree-command-on-mac-os-x-3b2d4c4a4827))
         Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
 
         // load wallet #1 from hard drive, specify passphrase and path
@@ -443,6 +440,14 @@ You can see that recipient and block-ID match.
 
 ## Smart Contracts
 
+Ethereum supports three kinds of transactions:
+
+ * Transfer ether from one account to another
+ * Deposit a smart contract on the blockchain
+ * Trigger a smart contract that already resides on the BC
+
+For any of them to be persisted, the transaction must be embedded into a newly added block. This is why it is crucial to run geth in mining mode, throughout the program execution.  
+Here comes a java code snippet for an ethereum-transfering transaction. If there are no miners, the program will hang on the last line.
 Ehtereum features three kinds of transactions:
 
  * Transfer of ether between accounts  
