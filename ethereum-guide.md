@@ -1,6 +1,9 @@
 # Hands-On   E-T-H-E-R-E-U-M    Guide
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
 [Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)
+
+*Note: This guide is under (Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0))[https://creativecommons.org/licenses/by-nc-sa/4.0/] License.*
+
 ## Machine Setup
 
 ### Utils
@@ -379,7 +382,7 @@ Easiest way is to set up your java project to use a [build automation tool](http
     </dependencies>
 ```
 
-*Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external librtaries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
+*Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
 ### Java (Hello-world-alike-thingy)
 
