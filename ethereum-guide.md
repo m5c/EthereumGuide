@@ -365,7 +365,7 @@ This section indicates the minimum steps to hook up a Java project to an HTTP-en
 
 Though vanilla Java provides utilities for HTTP communication, we will use the ```web3j``` library to abstract this layer away from our code. 
 
-To integrate ```web3j``` into a maven project, add the following dependencies to your ```pom.xml```: 
+To integrate ```web3j``` into a maven project, add the following dependency to your ```pom.xml```: 
 
 ```xml 
     <dependencies>
@@ -379,7 +379,7 @@ To integrate ```web3j``` into a maven project, add the following dependencies to
     </dependencies>
 ```
 
-*Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external librtaries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "enable auto-imports".*
+*Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external librtaries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
 ### Java (Hello-world-alike-thingy)
 
