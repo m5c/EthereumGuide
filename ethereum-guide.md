@@ -289,7 +289,9 @@ Another way to boost an accounts balance is to transfere ether from another acco
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-*Note: Your is without effect until the blockchain was extended by a new block to embed your transaction.*
+PENDING...
+
+*Note: Transactions are without effect until the blockchain was extended by a new block to embed them.*
 
 If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfer will be rejected.
 ```bash
