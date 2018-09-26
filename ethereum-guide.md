@@ -289,7 +289,7 @@ Another way to boost an accounts balance is to transfere ether from another acco
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-As you remember querrying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing it still has to be "arrive" in the blockchain. For that to happen it must still "wrapped" by a new block. More information on that [a little later](#Transactions).  
+As you remember querrying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing it still has to be "arrive" in the blockchain. For that to happen it must still "wrapped" by a new block. As you will read [a little later](#Transactions), transfering ether is the first ands most common of three possible transaction types. From the moment of their registration, transactions first remain in a pending state where they are only queued for being stored in the blockchain. It is only when a new block is mined that they can be integrated into the blockchain as payload of that block.  
 **Tl;dr: Your transfer has no visible effect until you mine at least one more block.**
 
 If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfer will be rejected.
