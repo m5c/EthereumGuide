@@ -199,7 +199,7 @@ Without ether, accounts are very limited in their actions.
 
 ### Querrying
 
-Once you have an account, you can easily find out the attached balance. Open the console with  
+Querrying is the act of resolving the amount of ether attached to an account, regarding the blockchains most recent state. To look that amount up, first open a geth console, using:
 
         geth --nodiscover console  
 
@@ -207,7 +207,7 @@ Once you have an account, you can easily find out the attached balance. Open the
 
 *Note: When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctr-C```. ```Ctr-D``` brings you back to the parent bash.*
 
-To get your balance in *Wei*, type:  
+To then print the current balance in *Wei*, type:  
 
         eth.getBalance("0x...hashofyouraccounthere")  
 
@@ -289,7 +289,7 @@ Another way to boost an accounts balance is to transfere ether from another acco
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-*Note: Your transfer will be without effect until the blockchain was extended by a new block that embeds your transaction.*
+*Note: Your is without effect until the blockchain was extended by a new block to embed your transaction.*
 
 If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfer will be rejected.
 ```bash
