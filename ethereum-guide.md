@@ -409,6 +409,8 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 ### Java (Hello-world-alike-thingy)
 
+*Have a look at the [original Web3j getting started guide](https://web3j.readthedocs.io/en/latest/getting_started.html) for more code examples.*
+
 Ethereum supports three kinds of transactions:
 
  * Transfer ether from one account to another
