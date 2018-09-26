@@ -278,7 +278,7 @@ Alternatively you can refer to the index of the account. The order corresponds t
 
 ### Transfering Ether
 
-Another way to boost an accounts balance is to transfere ether from another account. Before actually transfering the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 15 seconds, using the password ```abc123```. The secons command sends ```42``` ether from account at index ```0``` to account at index ```1```.
+Another way to boost an accounts balance is to transfere ether from another account. Before actually transfering the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 15 seconds, using the password ```abc123```. The seconds command sends ```42``` ether from account at index ```0``` to account at index ```1```.
 
 ```bash
     > web3.personal.unlockAccount(web3.personal.listAccounts[0],"abc123", 15)
