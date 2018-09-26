@@ -413,30 +413,33 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 The following code snippet does three things:
  * Connect to a local node.  
-Default access is ```127.0.0.1:8545```. Make sure the port is not blocked.
+Default access is ```127.0.0.1:8545```. Make sure the port is not blocked by your firewall or another application.
 
  * Load credentials for an existing account, using its physical location and password.  
-You can easily look your location by `cd`ing to your *ethereum base dir* and running the ```tree``` command. ([Mac instructions for installation](https://rschu.me/list-a-directory-with-tree-command-on-mac-os-x-3b2d4c4a4827))
+You can look up the location by ```cd```ing to your *ethereum base dir*, then running the ```tree``` command. ([Mac installation](https://rschu.me/list-a-directory-with-tree-command-on-mac-os-x-3b2d4c4a4827))
+
+ * Trigger the actual sending of etherum.
+This line may block a while depending on the cpu-power of your background miner. Typical response time is 15-20 seconds.
+
+```java
+        // Connect to local node
         Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
 
-        // load wallet #1 from hard drive, specify passphrase and path
-        Credentials credentialsWallet1 = WalletUtils.loadCredentials("abc123", "/home/schieder/.ethereum/keystore/UTC--2018-04-12T12-55-28.874090257Z--ac3fbbf1b4649104f44377b3c33f401c9ac3f8df");
+        // Load credentials for accessing wallet of source account
+        Credentials credentialsWallet1 = WalletUtils.loadCredentials(SOURCE_ACCOUNT_PASSWORD, LOCATION_SOURCE_ACCOUNT);
 
-        // Transfer something to wallet #2
-        String addressWallet2 = "0x720c0908c38b1250aaeb05b999e14cc50e1134e4";
-        TransactionReceipt transactionReceipt = Transfer.sendFunds(web3, credentialsWallet1, addressWallet2, BigDecimal.valueOf(0.2), Convert.Unit.ETHER).sendAsync().get();
-
-You will see a log in your geth console that the transaction has been demanded. Still the program will not terminate. This is because transactions need to be embedded into blocks, and currently there are no miners running that could provide this frame for your transaction.  
-
-Geth console log:  
-```INFO [04-19|10:28:52] Submitted transaction                    fullhash=0xd44daa38560a1b067475a45c12323b667a23e00c7c3275b28655c12b6d1940cf recipient=0x720c0908c38B1250AAeb05b999E14Cc50e1134e4```
-
-Java console log (on System.out.println(transactionReceipt)):  
-```Receipt: TransactionReceipt{transactionHash='0xd44daa38560a1b067475a45c12323b667a23e00c7c3275b28655c12b6d1940cf', transactionIndex='0x0', blockHash='0x46a62f65f7c7fc10245c2f9f244c429bec4cb64e8b245ffbe427de746957069b', blockNumber='0x17c', cumulativeGasUsed='0x5208', gasUsed='0x5208', contractAddress='null', root='0x2ac9e6f9e96c6a5c02ea03adb59b6dd42bbcf656fb85df741f6d49e0644b0fe7', status='null', from='0xac3fbbf1b4649104f44377b3c33f401c9ac3f8df', to='0x720c0908c38b1250aaeb05b999e14cc50e1134e4', logs=[], logsBloom='0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'}
+        // Transfer specified amount of ether to target account
+        Transfer.sendFunds(web3, credentialsWallet1, TARGET_ACCOUNT, BigDecimal.valueOf(AMOUNT), Convert.Unit.ETHER).sendAsync().get();
 ```
 
-You can see that recipient and block-ID match.  
+*Note: Full demo code available [here](https://kartoffelquadrat.eu:5050/).*
 
+Also, you will be able to track the execution of your program on the debug output of your geth node. Between the mining messages you should see:  
+```bash
+    INFO [09-26|14:43:33.350] Submitted transaction                    fullhash=0x08026e37dcdec6790da17773f226c3e9190305f9b63f9c0aa0b025280057e2de recipient=0xd929a310108EA93d2D82DF4A74763eD1316F94Fb
+```
+
+You can directly store the return value of the third line in a transaction receipt object, within in your java code. More information on using the web3j API, code examples [here](https://web3j.readthedocs.io/en/latest/getting_started.html).
 
 ## Smart Contracts
 
