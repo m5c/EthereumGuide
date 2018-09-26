@@ -370,7 +370,7 @@ The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up t
 
 For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
-*Note: You might wonder why you power up the node in mining mode. Reason is that you can only store transactions in the blockchain, if there is someone who provides the blocks to wrap your transactions. A blockchain without miners is "dead". If you forget the ```--mine``` option, your programs will stall whenever they attempt to effectuate a transactions.*
+*Note: As mentioned in the [balance](#balance) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp will block for all interactions that require [transactions](#transactions).*
 
 
 #### Test accessing your node
