@@ -417,7 +417,7 @@ Default access is ```127.0.0.1:8545```. Make sure the port is not blocked by you
  * Load credentials for an existing account, using its physical location and password.  
 You can look up the location by ```cd```ing to your *ethereum base dir*, then running the ```tree``` command. ([Mac installation](https://rschu.me/list-a-directory-with-tree-command-on-mac-os-x-3b2d4c4a4827))
 
- * Trigger the actual sending of etherum.
+ * Trigger the actual sending of ether.  
 This line may block a while depending on the cpu-power of your background miner. Typical response time is 15-20 seconds.
 
 Combined we end up with the following code snippet:  
