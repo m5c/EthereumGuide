@@ -539,6 +539,7 @@ How to do it with geth
 
 Saving the SC in the chain is straightforward. Load ```web3j``` and some valid account credentials (of the person who submits the SC) into local variables, then persist using the SCs ```deploy(...)``` method.
 
+```java
         // Load web3j
         Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
 
@@ -551,6 +552,14 @@ Saving the SC in the chain is straightforward. Load ```web3j``` and some valid a
         Buffer contract = Buffer.deploy(
           web3, credentials, GAS_PRICE, GAS_LIMIT,
           "Hello blockchain world!").send();
+```
+
+When executing the code you geth node will immediately log the persistence of your contract:
+
+```bash
+    INFO [09-26|17:46:20.708] Setting new local account                address=0x3c7b081d3e608525A2efB821e80d597Cef7a435c
+    INFO [09-26|17:46:20.708] Submitted contract creation              fullhash=0xf6e29728627250aace189814f4bb069ecd4a9d4cc38aa040f0a17e7a8a37ccfc contract=0x6b557c7a68C2e9919c2Be1c3B4772e792b6F44E9
+```
 
 ### Interact with a smart contract
 
