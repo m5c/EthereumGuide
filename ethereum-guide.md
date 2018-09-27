@@ -715,54 +715,43 @@ Once geth is running, type:
 
 #### Connect
 
-On *Machine II*, launch geht with:
+On *Machine II*, launch geth slightly modified arguments::
 
 ```bash
- geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
+    geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
 ```
 
-*Note: Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
+*Note: Adapt datadir, networkid, port, rpcport, rpcaddr according to  your setup.*
 
+Next connect to the enode running on *machine I*:  
+```bash
+    > admin.addPeer("enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0")
+```
 
-so finally you should have (mac, machine 1)
-and (linux, machine 2)
+Verify the logs of *machine I*. You should see something like:  
+```bash
+    DEBUG[09-19|13:51:54] Ethereum peer connected                  id=175cb35c728eb654 conn=staticdial name=Geth/v1.8.14-stable/gentoo-amd64/go1.10.3
+```
 
-Alright last thing you need to do is to sync with an existing node. Therefore we use the enode-id we queried before:
-But careful! -> the enode string still contains a self reference "[::]" which is nothing else but "127.0.0.1", the localhost loopback ip. For the node who printed this string it was correct, but if we want to connect from another node it has to be changed for the actual ip. So if the first machine hat 192.168.5.1, we can now connect using the enode id:
-"enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0"
-Simply type:
-> admin.addPeer("enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0")
-Check the log outputs for error / success messages.
-Ideal you see something like:
-DEBUG[09-19|13:51:54] Ethereum peer connected                  id=175cb35c728eb654 conn=staticdial name=Geth/v1.8.14-stable/darwin-amd64/go1.10.3
-This was the output from the linux machine connecting to a geth node on a mac -> "darwin"
-Check the output of:
-> admin.peers
-If it returns an empty list: "[]" it did not work, if you see
-[{
-    caps: ["eth/62", "eth/63"],
-    id: "175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51",
-    name: "Geth/v1.8.14-stable/darwin-amd64/go1.10.3",
-    network: {
-      localAddress: "192.168.5.2:33094",
-      remoteAddress: "192.168.5.1:30301"
-    },
-    protocols: {
-      eth: {
-        difficulty: 3825280,
-        head: "0x96127b538059d60a5b757c5da074e05d510d60f6cfb001f79dfd23fad9296351",
-        version: 63
-      }
-    }
+Also on *machine II* verify if the enode of *machine I* is listed as peer:
+```bash
+    > admin.peers
+    [{
+        caps: ["eth/62", "eth/63"],
+        id: "175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51",
+        name: "Geth/v1.8.14-stable/darwin-amd64/go1.10.3",
+        network: {
+          localAddress: "192.168.5.2:33094",
+          remoteAddress: "192.168.5.1:30301"
+        },
+        protocols: {
+            eth: {
+                difficulty: 3825280,
+                head: "0x96127b538059d60a5b757c5da074e05d510d60f6cfb001f79dfd23fad9296351",
+                version: 63
+            }
+        }
 }]
-You're good to go. :-)
+```
 
-
-mac
-geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=3 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.5.1 --nodiscover console
-
-lin
-geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=3 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.5.2 --nodiscover console
-
-FIREWALL SETTINGS???
 
