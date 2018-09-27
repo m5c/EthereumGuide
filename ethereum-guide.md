@@ -469,7 +469,7 @@ Developing and using a smart contracts always follows the same pattern.
  * [Deploy](#deployment-of-a-smart-contract)  
  * [Call](#tata)  
 
-The following subsections illustrate this procedure.
+The following subsections illustrate the process on the example of a Java Dapp that first deposits a smart contract "mirror". It is a minimal smart contract that merely offers a single function "reflect". When reflect is called it simply returns the received input string. After the deployment the Dapp calls the contract with ```Hello, smart-world!``` and prints the return value. Complete sources of a demo implementation can be found [here](https://kartoffelquadrat.eu:5050/maex/smart-contract-demo). 
 
 *Note: As this guide aims at Java Dapp development, the used directory layout matches a [maven-project structure](https://maven.apache.org/guides/getting-started/).*
 
