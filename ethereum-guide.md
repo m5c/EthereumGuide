@@ -683,6 +683,16 @@ Best practice is to write the file on one machine and then transfere it to the o
 
 ### Enodes
 
+Next you need to synchronize your machines. This can be achieved with enodes. An enode is a nodes unique entry point. Procedure for linking your machines using enodes is:
+
+ * Start a geth node on *Machine I*
+
+ * Query the enode of *Machine I*
+
+ * Start a geth node on *Machine II*
+
+ * Synch *MAchine II with the enode of *Machine I*.
+
 #### Lookup
 
 #### Connect
