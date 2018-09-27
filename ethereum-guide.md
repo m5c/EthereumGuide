@@ -495,7 +495,7 @@ This is simple example of a smart contract named ```mirror``` with a single func
     }  
 ```
 
-In the context of a java Dapp the default location for your solidity file is:
+Default relative location of smart contract source file in a Java-Dapp:  
 
 ```bash
     .
