@@ -495,11 +495,26 @@ This is simple example of a smart contract named ```mirror``` with a single func
     }  
 ```
 
+In the context of a java Dapp the default location for your solidity file is:
+
+```bash
+    .
+    ├── README.md
+    ├── contracts
+    │   └── solidity
+    │       └── Mirror.sol
+    ├── pom.xml
+    ├── src
+    │   └── ...
+    └── target
+        └── ...
+```
+
+
 #### Compilation of solidity code to binaries
 
-Solidity code by itsel is neither executable by the EVM (ethereum virtual machine) not usable for your web3J-java project. Integration runs in two stages:
+The EVM can not interpret solidity sources. You have to compile your contract into binaries.
 
- * Compile the solidity code into EJM binaries.
 
 Presuming that you have an Intellij-wbe3J project at ```~/IdeaProjects/web3Jdemo/``` you should place your solidity code at ```~/IdeaProjects/web3Jdemo/contracts/solidity/MyContract.sol``` 
 
