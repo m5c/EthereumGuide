@@ -619,8 +619,10 @@ Web3j abtracts the entire asynchronous communication with gath away from you and
 To interact with a smart contract, you can do simple method call on the contract-object you received upon deploment:
 
 ```java
-    // Will send a string to the mirror-contract, living on the blockchain, wait for the EVM to run the code, then print the contract's reply to console
-System.out.println(mirrorContract.reflect("Hello, smart-world!")
+    // Will send a string to the mirror-contract, living on the blockchain, 
+    // wait for the EVM to run the code, then print the contract's reply to
+    // console
+    System.out.println(mirrorContract.reflect("Hello, smart-world!")
 ```
 
 ## Clusters
