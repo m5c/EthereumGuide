@@ -443,7 +443,7 @@ You can directly store the return value of the third line in a transaction recei
 
 ## Smart Contracts
 
-*Everything you need to know any many more code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
+*Everything you need to know and many more code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
 
 A smart contract is a program that resides in the blockchain. We therefore hold strong guarantees for its integrity and can trust into the correctness of generated outputs.
 
