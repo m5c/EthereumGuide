@@ -459,15 +459,17 @@ Ethereum defines only two more types:
 
 Commited transactions remain in a *pending state* until they have been embedded into a newly mined block. So apart from the transactions being already integrated into the blockchain there is a dynamic pool of *unpersisted transactions*. This is why miners keep the chain alive. Though miners extend the blockchain for the sake of being rewarded, their actual contribution is the integration of pending transactions into the blockchain. 
 
-### The procedure
+### Workflow
 
-Depositing and using a SC runs in 5 stages:
+Developing and using a smart contracts always follows the same pattern.
 
- * Code a smart contract in solitude.
- * Compile the solitude code into binaries.
- * Wrap the binaries in Java.
- * Make a transaction that persists the binaries in the blockchain.
- * Use further transaction s to interact with the deposited smart contract.
+ * Implement  
+ * Compile  
+ * Generate Java wrappers  
+ * Persist  
+ * Call  
+
+The following subsections illustrate this procedure.
 
 ### Coding a smart contract
 
