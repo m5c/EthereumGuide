@@ -678,7 +678,7 @@ Best practice is to write the file on one machine and then transfere it to the o
 ```
  * Init a new blockchain on **both*** machines, using that genesis file.
 ```bash
-   geth init ...
+    geth --datadir="nameOfYourChainGoesHere" init shared-genesis.json
 ```
 
 ### Enodes
@@ -689,13 +689,6 @@ Best practice is to write the file on one machine and then transfere it to the o
 
 
 3.2) from remote machine (RPC, remote procedure calls)
-Power up: (unsure if this works?)
-geth --datadir /Users/maex/Desktop/toto/ --networkid 1608199012345 --rpc --rpcport "8545" --rpcaddr "0.0.0.0" --rpccorsdomain "*"
-https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth
-http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html
-https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-clusterGENESIS: -> shared chain can be any string (!), chain id can be any big random number!
-MAKE SURE TO USE THE SAME CONFIG FOR YOUR GETH COMMANDS! (chainname, id)
-WARNING II -> the genesis file has to be the exact same file, by means of hashing - semantically identical but differently son files DO NOT WORK!
 INIT:
 Mac: cd Library/Ethereum/
 Linux: cd .ethereum
