@@ -106,7 +106,7 @@ For now it is empty but as soon as you interact with a blockchain you will see t
 
 By default all ```geth``` commands are executed scoped on the main ethereum blockchain. As interacting with the main chain implicitly means spending *real money*, we will advise geth to operate on our own private chain.
 To do so we first need to create a new blockchain. Each blockchain starts with a genesis block, the chains first block. The following steps show you how to create a new chain, based on a manually coded json representation of a genesis block.  
-*Note: When working on the main chain this step is obsolete. The main chain genesis block is hard coded into geth.*  
+*Note: When working on the main chain this step is not necessary. The main chain genesis block is hard coded into geth.*  
 
 Navigate to your *ethereum base directory* and create a file named ```genesis.json```.  
 Paste the following content into that file. **C&P is not enough, you still have to modify the content afterwards!**
