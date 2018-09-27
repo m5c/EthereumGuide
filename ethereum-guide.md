@@ -683,17 +683,15 @@ Best practice is to write the file on one machine and then transfere it to the o
 
 ### Enodes
 
-Next you need to synchronize your machines. This can be achieved with enodes. An enode is a nodes unique entry point. Procedure for linking your machines using enodes is:
-
- * Start a geth node on *Machine I*
-
- * Query the enode of *Machine I*
-
- * Start a geth node on *Machine II*
-
- * Synch *MAchine II with the enode of *Machine I*.
+Next you need to synchronize your machines. This can be achieved with enodes. An enode is a unique address that serves as entry point to a running ethereum node.
 
 #### Lookup
+
+To query the enode address of *Machine I*, launch a geth console for you initialized blockchain, then type:
+```bash
+> admin.nodeInfo.enode  
+"enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
+```
 
 #### Connect
 
@@ -752,8 +750,6 @@ _NOTE: tree command should now list your account hash in the "keystore" of YOUR 
     ├── history
     └── keystore
 FIND OUT ENODE ID OF YOUR RUNNING GETH -> P2p handshake entry point (other nodes can attach to this.)
-> admin.nodeInfo.enode
-"enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
 
 NOW GO OFFLINE (you are starting a p2p connection. unless you have a good firewall you should not expose your PC to the entire wollt. Thats why we're using old school cable LAN for out network in class)
 Before connecting from other geth entity -> restart geth with following changes:
