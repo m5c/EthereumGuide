@@ -477,7 +477,7 @@ The following subsections illustrate this procedure.
 
 Smart contracts are coded, using the [Solidity](https://solidity.readthedocs.io/en/v0.4.25/introduction-to-smart-contracts.html) language. No need for an IDE to do this, just open [your favorite text editor](https://www.vim.org/).
 
-This is simple example of a smart contract named ```mirror``` with a single function ```reflect```. As the name suggests, the functino simply returns its argument back to the caller.
+This is simple example of a smart contract named ```mirror``` with a single function ```reflect```. As the name suggests, the function simply returns its input back to the caller.
 
 ```solidity
     pragma solidity ^0.4.17;
