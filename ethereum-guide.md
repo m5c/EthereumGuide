@@ -524,7 +524,10 @@ This will generate four files:  (Correlates to the ```contract``` signatures of 
 
 Do not code the java wrappers yourself. Web3J handles that for you. If not yet done, [download the web3J command line tools](https://github.com/web3j/web3j/releases/tag/v1.0.4).  
 ```cd``` into the directory with the genereated binary blobs:  
-```cd ~/IdeaProjects/web3Jdemo/contracts/build/```  
+
+```bash
+    cd ~/IdeaProjects/hellosmartworld/contracts/build
+```  
 
 Then generate the Java wrappers, using:  
 
