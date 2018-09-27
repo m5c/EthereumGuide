@@ -447,7 +447,7 @@ You can directly store the return value of the third line in a transaction recei
 
 A smart contract is a program that resides in the blockchain. We therefore hold strong guarantees for its integrity and can trust into the correctness of generated outputs.
 
-*Note: "Correctness" applies from a security point of view, not a semantic. We stipulate that computed values correlate to the program code of a smart contract. However this does not mean the actual code is prone to errors.*
+*Note: "Correctness" applies from a security point of view, not a semantic. We stipulate that computed values correlate to the program code of a smart contract. The actual code is still prone to errors.*
 
 ### Transactions
 
