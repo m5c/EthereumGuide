@@ -507,7 +507,7 @@ Presuming that you have an Intellij-wbe3J project at ```~/IdeaProjects/web3Jdemo
 Next ```cd``` into that directory then compile your contract. Make sure the output directory is set to ```../build```  
 
 ```bash
-    solc MyContract.sol --bin --abi --optimize -o ../build
+    solc Mirror.sol --bin --abi --optimize -o ../build
 ```
 
 This will generate four files:  (Correlates to the ```contract``` signatures of your solitude file.)
