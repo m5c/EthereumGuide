@@ -627,10 +627,40 @@ To interact with a smart contract, you can do simple method call on the contract
     System.out.println(mirrorContract.reflect("Hello, smart-world!")
 ```
 
-## Local Clusters
+## Clusters
 
-So far all instractions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advanteges (integrity, availability) from the fact that they can be spread out and operated within large decentral networks.  
+So far all instractions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advantages (integrity, availability) from the fact that they can be spread out and operated within large decentral networks.  
 This section indicates how to set up new chains in multi-machine networks.
+
+### Physical link
+
+Before starting with whatsoever P2P configuration, ensure your network configuration is working on a [physical layer](https://en.wikipedia.org/wiki/Physical_layer).
+
+ * Ensure machines have unique IPs  
+ * Ensure machines are in the same subnet  
+ * Ensure dedicated ports are open  
+ * Test ICMP connection  
+
+Further illustrations refer to the following two-machine demo setup:
+```
+    +---------------------+                      +---------------------+
+    |      MACHINE 1      |                      |      MACHINE 2      | 
+    +=====================+                      +=====================+
+    | Host: "Chartreuse"  |                      | Host: "Coral"       |
+    | Dev: eth0           |                      | Dev: eth0           |
+    | IP: 192.168.6.1/24  +========-RJ45-========+ IP: 192.168.6.2/24  |
+    | Port: 30301         |                      | Port: 30302         |
+    | OS: Mac Os 10.13.6  |                      | OS: Gentoo 4.12.11  |
+    +---------------------+                      +---------------------+
+```
+
+### Common genesis
+
+### Enodes
+
+#### Lookup
+
+#### Connect
 
 ### Genesis, part 2.
 
