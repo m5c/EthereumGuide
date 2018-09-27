@@ -549,8 +549,9 @@ Java does not know how to handle these binaries. But you can embed them into jav
 
  * ```cd``` into your projects ```build``` directory.  
  * Generate the wrappers with:  
+
 ```bash
-    web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/
+    web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/  
 ```
 
 *Note: Don't forget to adapt the _bin and _abi file names, as well as your package name.*
