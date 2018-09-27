@@ -656,6 +656,29 @@ Further illustrations refer to the following two-machine demo setup:
 
 ### Common genesis
 
+The most important thing when setting up a new blockchain, is using the **exact** same genesis block on all machines. Semantic equivalence is not sufficient, the files must be bitwise identical.  
+Best practice is to write the file on one machine and then transfere it to the other over the network.
+
+ * Write a genesis json file on *MACHINE 1*  
+
+ * Transfer it to *MACHINE 2*
+```bash
+    scp genesis.json schieder@192.168.6.2:/tmp
+```  
+
+ * Verify the hashes are identical.  
+```bash
+    # Mac:
+    md5sum genesis.json
+
+    # Linux:
+    md5 genesis.json
+```
+ * Init a new blockchain on **both*** machines, using that genesis file.
+```bash
+   geth init ...
+```
+
 ### Enodes
 
 #### Lookup
