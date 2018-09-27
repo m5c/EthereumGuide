@@ -1,4 +1,4 @@
-# Hands-On   E-T-H-E-R-E-U-M    Guide
+# Hands-On Ethereum Guide
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
 [Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)
 
@@ -6,7 +6,7 @@ By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schie
 
 ## Machine Setup
 
-### Utils
+### Tools
 
 For building an Ethereum based Java-Dapp (Distributed Application), you need three things:
 
