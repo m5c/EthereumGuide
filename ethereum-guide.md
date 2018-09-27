@@ -551,12 +551,12 @@ Java does not know how to handle these binaries. But you can embed them into jav
  * Generate the wrappers with:  
 
 ```bash
-    web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/  
+    web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/
 ```
 
 *Note: Don't forget to adapt the _bin and _abi file names, as well as your package name.*
 
-This will generate the java wrapper class for your smart contract:  
+You will find a new java class in your sources:   
 ```bash
     .
     ├── README.md
