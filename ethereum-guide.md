@@ -479,26 +479,22 @@ Smart contracts are coded, using the [Solidity](https://solidity.readthedocs.io/
 
 This is simple example of a solidity code that receives a string and buffers it until replaced by a subsequent call.
 
-        pragma solidity ^0.4.17;
+```solidity
+    pragma solidity ^0.4.17;
         contract mortal {
-          address owner;
-          function mortal() public { owner = msg.sender; }
-          function kill() public { if (msg.sender == owner) selfdestruct(owner); }
+            address owner;
+            constructor() public { owner = msg.sender; }
+            function kill() public { if (msg.sender == owner) selfdestruct(owner); }
         }
 
-        contract buffer is mortal {
-          string buffer;
-          // constructor
-          function accumulator(string _initbuffer) public {
-            buffer = _initbuffer;
-          }
-
-          // getter
-          function greet(string _addendum) public constant returns (string) {
-            buffer = _addendum;
-            return buffer;
-          }
-        }  
+        contract mirrorcontract is mortal {
+    
+            // mini-function that simply returns the input argument back to caller
+            function reflect(string _input) public pure returns (string) {
+        	    return _input;
+            }
+    }  
+```
 
 #### Compilation of solidity code to binaries
 
