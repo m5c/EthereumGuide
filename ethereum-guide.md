@@ -515,11 +515,9 @@ Default relative location of smart contract source file in a Java-Dapp:
 
 The EVM can not interpret solidity sources. You have to compile your contract into binaries.
 
+ * ```cd``` into your projects ```solidity``` directory.  
 
-Presuming that you have an Intellij-wbe3J project at ```~/IdeaProjects/web3Jdemo/``` you should place your solidity code at ```~/IdeaProjects/web3Jdemo/contracts/solidity/MyContract.sol``` 
-
-Next ```cd``` into that directory then compile your contract. Make sure the output directory is set to ```../build```  
-
+ * Compile your smart contract:  
 ```bash
     solc Mirror.sol --bin --abi --optimize -o ../build
 ```
