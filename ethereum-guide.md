@@ -687,7 +687,15 @@ Next you need to synchronize your machines. This can be achieved with enodes. An
 
 #### Lookup
 
-To query the enode address of *Machine I*, launch a geth console for your initialized blockchain, then type:
+To query the enode address of *Machine I*, launch a geth console for your initialized blockchain. Parameters are a little different for a P2P setup.
+
+```bash
+ geth --datadir="nameOfYourChainGoesHere" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.6.1 --netrestrict 192.168.6.0/24 console
+```
+
+*Note: Adapt datadir, networkid, port, rpcport, rpcaddr.*
+
+Once geth is running, type:
 ```bash
 > admin.nodeInfo.enode  
 "enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
@@ -698,29 +706,6 @@ To query the enode address of *Machine I*, launch a geth console for your initia
 #### Connect
 
 
-3.2) from remote machine (RPC, remote procedure calls)
-INIT:
-Mac: cd Library/Ethereum/
-Linux: cd .ethereum
-        geth --datadir="sharedchain" init shared-genesis.json
-Expected structure:
-maex@Chartreuse:Ethereum $ tree sharedchain/
-sharedchain/
-├── geth
-│   ├── chaindata
-│   │   ├── 000002.log
-│   │   ├── CURRENT
-│   │   ├── CURRENT.bak
-│   │   ├── LOCK
-│   │   ├── LOG
-│   │   └── MANIFEST-000003
-│   └── lightchaindata
-│       ├── 000001.log
-│       ├── CURRENT
-│       ├── LOCK
-│       ├── LOG
-│       └── MANIFEST-000000
-└── keystore
 One ONE client (and only one!), start geth in console mode, create account, obtain some ether:
 geth --datadir="sharedchain" --networkid 1608199012345 --nodiscover console
 > personal.newAccount("maxou1")
@@ -728,30 +713,6 @@ geth --datadir="sharedchain" --networkid 1608199012345 --nodiscover console
 > miner.start(1)
 Check balance, then abort geth
 > web3.fromWei(eth.getBalance(eth.coinbase), "ether")
-_NOTE: tree command should now list your account hash in the "keystore" of YOUR chain (sharedchain)!
-└── sharedchain
-    ├── geth
-    │   ├── LOCK
-    │   ├── chaindata
-    │   │   ├── 000004.ldb
-    │   │   ├── 000007.ldb
-    │   │   ├── 000008.log
-    │   │   ├── CURRENT
-    │   │   ├── CURRENT.bak
-    │   │   ├── LOCK
-    │   │   ├── LOG
-    │   │   └── MANIFEST-000009
-    │   ├── lightchaindata
-    │   │   ├── 000001.log
-    │   │   ├── CURRENT
-    │   │   ├── LOCK
-    │   │   ├── LOG
-    │   │   └── MANIFEST-000000
-    │   ├── nodekey
-    │   └── transactions.rlp
-    ├── history
-    └── keystore
-FIND OUT ENODE ID OF YOUR RUNNING GETH -> P2p handshake entry point (other nodes can attach to this.)
 
 NOW GO OFFLINE (you are starting a p2p connection. unless you have a good firewall you should not expose your PC to the entire wollt. Thats why we're using old school cable LAN for out network in class)
 Before connecting from other geth entity -> restart geth with following changes:
@@ -763,7 +724,6 @@ add "--rpcport 81XY", same reason (remote procedure calls need a unique target)
 add "--rpcaddr 192.168.a.b" , matching the physical address of your ethernet card.
 add "--netrestrict 192.168.10.0/24" because we want to start a P2P net only in the LAN, noit share it with the entire world.
 so finally you should have (mac, machine 1)
- geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.10.1 --netrestrict 192.168.10.0/24 console
 and (linux, machine 2)
  geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
 
