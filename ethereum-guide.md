@@ -614,32 +614,13 @@ Once more you can track the effect of your transaction in geths logs:
 
 ### Interact with a smart contract
 
-Two components:
+Web3j abtracts the entire asynchronous communication with gath away from you and even simulated a synchronous behaviour. This way you can interact with the smart contract as if it were operating on a local object.
 
- * Sending information / calling SC
- * Receiving reply
+To interact with the smart contract (living in the blockchain!) you can do simple method call on the object you received on deploment:
 
-Finally you want to send values to the SC and receive return values (just as you would use any other function).  
-Note: Though the procedure described below suggest a synchronous characteristic, it is actually not. In a first transaction the params get passed to the SC. The SC then by iself writes a second tansaction with the result to the BC. It is merely web3j that hides this complexity from you and emulates a ```synchronous``` execution. That is to say with the code below, calling and receiving will block until some miners have actually eternalized the related transactions in the chain.
-
-#### Sending
-
-To send params you use the function you defined in your solitude file, e.g. ```greet("SomeStringAsParam")```. The actual call then looks like this:  
-```contract.buffer("SomeStringAsParam").send();```  
-Note: ```contract``` is the reference you rceived upon persistence in the BC. ```send()``` is the explicit call to persist this parameter-passing transaction in the BC.
-
-#### Receiving
-
-Receiving is even simplet. It merely is the return value of the call that passed a value to the SC. So to recover a String from the buffer SC, you would write:  
-```String theReturnValue = contract.buffer().send("SomeInputValue");```  
-
-In case you want to access the contract from another agent you need to load it first from the BC. To do so, use it's unique address.  
-It has to be exposed by the entity that deposited the SC in the chain:
-```contractInstance.getContractAddress();```  
-The string returned by this call, looks like:  
-```0xda87ac931d237a2fe1ef8e45abf79244c69e6a06```  
-Use this sting in the second agent to load the contract:  
-```GeneratedContractClass.load("0xda87ac931d237a2fe1ef8e45abf79244c69e6a06", web3, credentials, GAS_PRICE, GAS_LIMIT);```
+```java
+    System.out.println(mirrorContract.reflect("Hello, smart-world!"));
+```
 
 ## Clusters
 
