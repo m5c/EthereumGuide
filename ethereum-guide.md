@@ -463,15 +463,15 @@ Commited transactions remain in a *pending state* until they have been embedded 
 
 Developing and using a smart contracts always follows the same pattern.
 
- * Implement  
- * Compile  
- * Generate Java wrappers  
- * Persist  
- * Call  
+ * [Implement](#implementation-of-the-smart-contract-logic)  
+ * [Compile](#compilation-of-solidity-code-to-binaries)  
+ * [Generate Java wrappers](#generation-of-java-wrappers-for-smart-contract-binaries)  
+ * [Persist](#toto)  
+ * [Call](#tata)  
 
 The following subsections illustrate this procedure.
 
-#### Implementation
+#### Implementation of the smart contract logic
 
 Smart contracts are coded, using the [Solidity](https://solidity.readthedocs.io/en/v0.4.25/introduction-to-smart-contracts.html) language. No need for an IDE to do this, just open [your favorite text editor](https://www.vim.org/).
 
