@@ -516,9 +516,6 @@ This will generate four files:  (Correlates to the ```contract``` signatures of 
  * ```../build/mirrorcontract.bin```  
  * ```../build/mirrorcontract.abi```  
 
-**TODO: get rid of warnings at compilation**
-**TODO: adapt command and filenames (buffer - helloworld)**
-
 #### Generation of a Java wrapper for smart contract binaries
 
 Do not code the java wrappers yourself. Web3J handles that for you. If not yet done, [download the web3J command line tools](https://github.com/web3j/web3j/releases/tag/v1.0.4).  
