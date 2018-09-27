@@ -472,6 +472,7 @@ Developing and using a smart contracts always follows the same pattern.
 The following subsections illustrate this procedure.
 
 **ToDo: File structure.**
+*Note: As this guide aims on Java Dapps, the used directory layout matches a [maven-project structure](https://maven.apache.org/guides/getting-started/).*
 
 #### Implementation of the smart contract logic
 
