@@ -659,7 +659,7 @@ Further illustrations refer to the following two-machine demo setup:
 The most important thing when setting up a new blockchain, is using the **exact** same genesis block on all machines. Semantic equivalence is not sufficient, the files must be bitwise identical.  
 Best practice is to write the file on one machine and then transfere it to the other over the network.
 
- * Write a genesis json file on *MACHINE 1*  
+ * [Write a genesis json file](#genesis-block) on *MACHINE 1*. Make sure to use a unique chain id.
 
  * Transfer it to *MACHINE 2*
 ```bash
@@ -669,10 +669,10 @@ Best practice is to write the file on one machine and then transfere it to the o
  * Verify the hashes are identical.  
 ```bash
     # Mac:
-    md5sum genesis.json
+    md5 genesis.json
 
     # Linux:
-    md5 genesis.json
+    md5sum genesis.json
 ```
  * Init a new blockchain on **both*** machines, using that genesis file.
 ```bash
@@ -731,23 +731,6 @@ http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html
 https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-clusterGENESIS: -> shared chain can be any string (!), chain id can be any big random number!
 MAKE SURE TO USE THE SAME CONFIG FOR YOUR GETH COMMANDS! (chainname, id)
 WARNING II -> the genesis file has to be the exact same file, by means of hashing - semantically identical but differently son files DO NOT WORK!
-{
-    "alloc": {},
-    "coinbase": "0x0000000000000000000000000000000000000000",
-    "config": {
-        "chainId": 1608199012345,
-        "eip155Block": 0,
-        "eip158Block": 0,
-        "homesteadBlock": 0
-    },
-    "difficulty": "0x20000",
-    "extraData": "",
-    "gasLimit": "0x2fefd8",
-    "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "nonce": "0x0000000000000042",
-    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "timestamp": "0x00"
-}
 INIT:
 Mac: cd Library/Ethereum/
 Linux: cd .ethereum
