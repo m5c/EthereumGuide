@@ -465,7 +465,7 @@ Developing and using a smart contracts always follows the same pattern.
 
  * [Implement](#implementation-of-the-smart-contract-logic)  
  * [Compile](#compilation-of-solidity-code-to-binaries)  
- * [Generate Java wrappers](#generation-of-java-wrappers-for-smart-contract-binaries)  
+ * [Generate Java wrappers](#generation-of-a-java-wrapper-for-smart-contract-binaries)  
  * [Persist](#toto)  
  * [Call](#tata)  
 
