@@ -741,8 +741,8 @@ Also on *machine II* verify if the enode of *machine I* is listed as peer:
         id: "175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51",
         name: "Geth/v1.8.14-stable/darwin-amd64/go1.10.3",
         network: {
-          localAddress: "192.168.5.2:33094",
-          remoteAddress: "192.168.5.1:30301"
+          localAddress: "192.168.6.2:30302",
+          remoteAddress: "192.168.6.1:30301"
         },
         protocols: {
             eth: {
