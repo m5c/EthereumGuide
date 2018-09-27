@@ -629,6 +629,10 @@ To interact with a smart contract, you can do simple method call on the contract
 
 ## Clusters
 
+*More information on clusters and their setup [here](https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster), [here](https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth) and [here](http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html).*
+
+http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html
+
 So far all instractions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advantages (integrity, availability) from the fact that they can be spread out and operated within large decentral networks.  
 This section indicates how to set up new chains in multi-machine networks.
 
@@ -685,42 +689,7 @@ Best practice is to write the file on one machine and then transfere it to the o
 
 #### Connect
 
-### Genesis, part 2.
 
-The most crucial part for blockchain clusters is that all nodes must consent on the chain's beginning. 
-
-##1) create A SINGLE private chain, genesis block etc...
-##-> if no "--datadir" is provided this instatiates in ~/Library/Ethereum/geth...  otherwise it replicates structure in specified dir:
-##toto/
-├── geth
-│   ├── chaindata
-│   │   ├── 000001.log
-│   │   ├── CURRENT
-│   │   ├── LOCK
-│   │   ├── LOG
-│   │   └── MANIFEST-000000
-│   └── lightchaindata
-│       ├── 000001.log
-│       ├── CURRENT
-│       ├── LOCK
-│       ├── LOG
-│       └── MANIFEST-000000
-└── keystore"
-##2) create private network that will SHARE this BC.
-##geth --datadir /Users/maex/Desktop/toto/ --networkid 1608199012345
-##networkid SHOULD be something unique to not conflict with existing networks -> irrelevant in LAN (?)
-##3) Access the blockchain:
-##3.1) same machine: (IPC, inter process communication)
-##> personal.newAccount()
-##Passphrase:
-##Repeat passphrase:
-##"0x2e9d394a1c51568bab2ff61eb073bbe13415aadf"
-##> eth.getBalance("0x2e9d394a1c51568bab2ff61eb073bbe13415aadf")
-##mine:
-##> miner.start()
-##...wait until DAG complete, something commited.
-##> miner.stop()
-##> eth.getBalance("0x2e9d394a1c51568bab2ff61eb073bbe13415aadf")
 3.2) from remote machine (RPC, remote procedure calls)
 -> CLuster: https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster
 https://ethereum.stackexchange.com/questions/12436/how-to-communicate-with-a-remote-node
