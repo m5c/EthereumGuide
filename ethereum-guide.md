@@ -630,10 +630,10 @@ To interact with a smart contract, you can do simple method call on the contract
 
 ## Clusters
 
-*More information on clusters and their setup [here](https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster), [here](https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth), [here](http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html) and [here](https://ethereum.stackexchange.com/questions/12436/how-to-communicate-with-a-remote-node).*
-
 So far all instractions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advantages (integrity, availability) from the fact that they can be spread out and operated within large decentral networks.  
 This section indicates how to set up new chains in multi-machine networks.
+
+*More information on clusters and their setup [here](https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster), [here](https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth), [here](http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html) and [here](https://ethereum.stackexchange.com/questions/12436/how-to-communicate-with-a-remote-node).*
 
 ### Physical link
 
