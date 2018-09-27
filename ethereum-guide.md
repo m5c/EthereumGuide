@@ -695,7 +695,7 @@ To query the enode address of *Machine I*, launch a geth console for your initia
 
 *Note: Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
 
-Changes:  
+Quick overview of parameter changes, compared to single machine setup:  
  * ```--verbosity=4```: Low number means less output, higher more. 4 is a reasonable setting for getting problems printed without having your entire screen flooded with logs.
  * Remove ```--nodiscover``` -> you want to use P2P functionality, right ;-)
  * ```--ipcdisable``` -> no need for interprocess communication, we want the nodes to interact over LAN
