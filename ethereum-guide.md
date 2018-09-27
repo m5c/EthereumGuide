@@ -407,7 +407,7 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 *Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
-#### Programmatic access
+#### Transfering ether
 
 The simplest example once more is to transfer ether between accounts. To implement this with java/web3j you need to do three things:  .
 
