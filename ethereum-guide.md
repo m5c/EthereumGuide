@@ -209,9 +209,10 @@ Querrying is the act of resolving the amount of ether attached to an account, re
 
 To then print the current balance in *Wei*, type:  
 
-*Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
         eth.getBalance("0x...hashofyouraccounthere")  
+
+*Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
 
