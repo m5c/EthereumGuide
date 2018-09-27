@@ -687,11 +687,13 @@ Next you need to synchronize your machines. This can be achieved with enodes. An
 
 #### Lookup
 
-To query the enode address of *Machine I*, launch a geth console for you initialized blockchain, then type:
+To query the enode address of *Machine I*, launch a geth console for your initialized blockchain, then type:
 ```bash
 > admin.nodeInfo.enode  
 "enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
 ```
+
+*Note: The substring ```[::]``` at the end substitutes the localhost address ```127.0.0.1```. If you want to use the enode address from another machine, it has to be replaced by Machine I's IP address: ```192.168.6.1```.*
 
 #### Connect
 
