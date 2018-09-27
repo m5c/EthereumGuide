@@ -644,7 +644,7 @@ Before starting with whatsoever P2P configuration, ensure your network configura
 Further illustrations refer to the following two-machine demo setup:
 ```
     +---------------------+                      +---------------------+
-    |      MACHINE 1      |                      |      MACHINE 2      | 
+    |      MACHINE I      |                      |      MACHINE II     | 
     +=====================+                      +=====================+
     | Host: "Chartreuse"  |                      | Host: "Coral"       |
     | Dev: eth0           |                      | Dev: eth0           |
@@ -659,9 +659,9 @@ Further illustrations refer to the following two-machine demo setup:
 The most important thing when setting up a new blockchain, is using the **exact** same genesis block on all machines. Semantic equivalence is not sufficient, the files must be bitwise identical.  
 Best practice is to write the file on one machine and then transfere it to the other over the network.
 
- * [Write a genesis json file](#genesis-block) on *MACHINE 1*. Make sure to use a unique chain id.
+ * [Write a genesis json file](#genesis-block) on *Machine I*. Make sure to use a unique chain id.
 
- * Transfer it to *MACHINE 2*
+ * Transfer the file to *Machine II*
 ```bash
     scp genesis.json schieder@192.168.6.2:/tmp
 ```  
