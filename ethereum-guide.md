@@ -471,7 +471,9 @@ Developing and using a smart contracts always follows the same pattern.
 
 The following subsections illustrate this procedure.
 
-### Coding a smart contract
+### Implementation
+
+Smart contracts are coded, using the [Solidity](https://solidity.readthedocs.io/en/v0.4.25/introduction-to-smart-contracts.html) language. No need for an IDE to do this, just open [your favorite text editor](https://www.vim.org/).
 
 This is simple example of a solidity code that receives a string and buffers it until replaced by a subsequent call.
 
