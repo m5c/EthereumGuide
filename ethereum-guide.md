@@ -529,7 +529,7 @@ Do not code the java wrappers yourself. Web3J handles that for you. If not yet d
 Then generate the Java wrappers, using:  
 
 ```bash
-    web3j solidity generate ./buffer.bin ./buffer.abi -p your.funny.package.goes.here -o ../../src/main/java/
+    web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/
 ```  
 
 Your IDE should then display a generated java class in the specified pacakge. If you inspect the file you will find the binary blobs integrated. This a line that looks alike:  
