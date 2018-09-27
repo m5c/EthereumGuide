@@ -109,7 +109,7 @@ To do so we first need to create a new blockchain. Each blockchain starts with a
 *Note: When working on the main chain this step is not necessary. The main chain genesis block is hard coded into geth.*  
 
 Navigate to your *ethereum base directory* and create a file named ```genesis.json```.  
-Paste the following content into that file. **C&P is not enough, you still have to modify the content afterwards!**
+Paste the following content into that file. **Copy & Paste is not enough, you still have to modify the content afterwards!**
 
 ```json
     {
@@ -131,7 +131,7 @@ Paste the following content into that file. **C&P is not enough, you still have 
     }
 ```
 
-Essentially, this description nails down the characteristics of your new custom blockchain. However in a network, there must not be two different chains using the same *chainId*. To avoid that, edit the *chainId* value and fill in a number that is sufficiently high and unique, e.g. your birthday + 12345, then save the file.
+Essentially, this description nails down the characteristics of your new custom blockchain. However in a network, there must not be two different chains using the same *chainId*. To avoid that, edit the *chainId* value and fill in a number that is sufficiently high and unique, e.g. your birthday + 12345, then save the file. This is the only modification needed.
 
 For an explanation of the remaining fields, [look here](https://ethereum.stackexchange.com/questions/2376/what-does-each-genesis-json-parameter-mean).
 
@@ -151,7 +151,7 @@ Also, this will create a new subdirectory in your *ethereum base directory*. If 
 
 *More information on accounts [here](https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts).*
 
-Every intercation with a blockchain is effectuated on beahlf of an account. So in order to do anything with your newly created blockchain you now need at least one account.  
+Every intercation with a blockchain takes place on behalf of an account. So in order to do anything with your newly created blockchain you now need at least one account.  
 **Hint:**
 By default all geth commands are bound to the default chain. This involves the creation of new accounts. You can override this behaviour by providing a path to your own chain. Use the ```--datadir /some/path/``` switch. You can also use relative paths. A good practive is to ```cd``` into your *ethereum base dir* and then only provide the name of your chain as parameter.
 
@@ -192,10 +192,10 @@ Of course you do not need to inspect the file system to find your new account yo
 
 ## Balance
 
-*Additional information and commands realted to mining can be found [here](https://github.com/ethereum/go-ethereum/wiki/mining) and [here](https://github.com/turboprep/geth-tutorial).*
-
 Each account has an amount of ether attached. This amount can be considered as *funds*. Stakeholders who want to deposit something into the blockchain must pay a tiny amount of ether to do so.  
 Without ether, accounts are very limited in their actions.
+
+*Additional information and commands realted to mining can be found [here](https://github.com/ethereum/go-ethereum/wiki/mining) and [here](https://github.com/turboprep/geth-tutorial).*
 
 ### Querrying
 
