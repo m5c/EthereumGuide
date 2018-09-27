@@ -522,15 +522,10 @@ This will generate four files:  (Correlates to the ```contract``` signatures of 
 #### Generation of a Java wrapper for smart contract binaries
 
 Do not code the java wrappers yourself. Web3J handles that for you. If not yet done, [download the web3J command line tools](https://github.com/web3j/web3j/releases/tag/v1.0.4).  
-```cd``` into the directory with the genereated binary blobs:  
+```cd``` into the directory with the genereated binary blobs, then generate the Java wrapper for your contract.
 
 ```bash
-    cd ~/IdeaProjects/hellosmartworld/contracts/build
-```  
-
-Then generate the Java wrappers, using:  
-
-```bash
+    cd ~/IdeaProjects/hellosmartworld/contracts/build  
     web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/
 ```  
 
