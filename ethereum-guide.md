@@ -616,10 +616,11 @@ Once more you can track the effect of your transaction in geths logs:
 
 Web3j abtracts the entire asynchronous communication with gath away from you and even simulated a synchronous behaviour. This way you can interact with the smart contract as if it were operating on a local object.
 
-To interact with the smart contract (living in the blockchain!) you can do simple method call on the object you received on deploment:
+To interact with a smart contract, you can do simple method call on the contract-object you received upon deploment:
 
 ```java
-    System.out.println(mirrorContract.reflect("Hello, smart-world!"));
+    // Will send a string to the mirror-contract, living on the blockchain, wait for the EVM to run the code, then print the contract's reply to console
+System.out.println(mirrorContract.reflect("Hello, smart-world!")
 ```
 
 ## Clusters
