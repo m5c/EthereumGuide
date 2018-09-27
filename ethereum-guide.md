@@ -502,7 +502,7 @@ In the context of a java Dapp the default location for your solidity file is:
     ├── README.md
     ├── contracts
     │   └── solidity
-    │       └── Mirror.sol
+    │       └── Mirror.sol	<--- Place your contract here.
     ├── pom.xml
     ├── src
     │   └── ...
