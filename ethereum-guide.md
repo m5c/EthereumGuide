@@ -627,11 +627,15 @@ To interact with a smart contract, you can do simple method call on the contract
     System.out.println(mirrorContract.reflect("Hello, smart-world!")
 ```
 
-## Clusters
+## Local Clusters
 
-## C L U S T E R S...
-##Network setup:
-##[Actually two options: P2P, every machine own node, and RPC, only one mode, accessed remotely]
+So far all instractions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advanteges (integrity, availability) from the fact that they can be spread out and operated within large decentral networks.  
+This section indicates how to set up new chains in multi-machine networks.
+
+### Genesis, part 2.
+
+The most crucial part for blockchain clusters is that all nodes must consent on the chain's beginning. 
+
 ##1) create A SINGLE private chain, genesis block etc...
 ##-> if no "--datadir" is provided this instatiates in ~/Library/Ethereum/geth...  otherwise it replicates structure in specified dir:
 ##toto/
