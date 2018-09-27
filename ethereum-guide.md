@@ -523,7 +523,7 @@ The EVM can not interpret solidity sources. You have to compile your contract in
 ```
 This will generate and fill a ```build``` directory.
 
-By now your project structure should look like this:
+By now your project structure should resemble:
 
 ```bash
     .
@@ -545,13 +545,42 @@ By now your project structure should look like this:
 
 #### Generation of a Java wrapper for smart contract binaries
 
-Do not code the java wrappers yourself. Web3J handles that for you. If not yet done, [download the web3J command line tools](https://github.com/web3j/web3j/releases/tag/v1.0.4).  
-```cd``` into the directory with the genereated binary blobs, then generate the Java wrapper for your contract.
+Java does not know how to handle these binaries. But you can embed them into java wrappers. Wrappers are not coded manually, but generated from the binaries, using the ```web3j``` command-line tool.
 
+ * ```cd``` into your projects ```build``` directory.  
+ * Generate the wrappers with:  
 ```bash
-    cd ~/IdeaProjects/hellosmartworld/contracts/build  
     web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/
-```  
+```
+
+*Note: Don't forget to adapt the _bin and _abi file names, as well as your package name.*
+
+This will generate the java wrapper class for your smart contract:  
+```bash
+    .
+    ├── README.md
+    ├── contracts
+    │   └── ...
+    ├── pom.xml
+    ├── src
+    │   ├── main
+    │   │   ├── java
+    │   │   │   └── fr
+    │   │   │       └── insa
+    │   │   │           └── drim
+    │   │   │               └── schieder
+    │   │   │                   └── etherdemo
+    │   │   │                       └── hellosmartworld
+    │   │   │                           ├── ...
+    │   │   │                           └── Mirrorcontract.java <--- This file is the generated wrapper
+    │   │   └── resources
+    │   └── test
+    │       └── ...
+    └── target
+        └── ...
+```
+
+
 
 Your IDE should then display a generated java class in the specified pacakge. If you inspect the file you will find the binary blobs integrated. This a line that looks alike:  
 
