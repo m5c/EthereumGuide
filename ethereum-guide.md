@@ -445,19 +445,18 @@ You can directly store the return value of the third line in a transaction recei
 
 *Everything you need to know any many more code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
 
-A littel word on what SCs are. - what are they and why should I care.
+A smart contract is a program that resides in the blockchain. We therefore hold strong guarantees for its integrity and can trust into the correctness of its computations.. 
 
 ### Transactions
 
-Using smart contracts always means storing transactions in the blockchain. Ethereum supports three kinds of transactions and you have already met the first one:  
+You can not use smart contracts without a basic understanding of transactions. Transactions are the payload of blocks. In "[Transfering Ether](#transfering-ether)" you have already gotten to know the first and most common type of transactions. 
+Ethereum defines only two more kinds of transactions:
 
- * Transfer ether from one account to another
- * Deposit a smart contract on the blockchain
- * Trigger a smart contract that already resides on the BC
+ * Deposit of a new smart contract in the blockchain.  
+ * Calling a previously deposited smart contract.  
 
-For any of them to be persisted, the transaction must be embedded into a newly added block. This is why it is crucial to run geth in mining mode, throughout the program execution.  
-Here comes a java code snippet for an ethereum-transfering transaction. If there are no miners, the program will hang on the last line.
-Ehtereum features three kinds of transactions:
+
+the transaction must be embedded into a newly added block. This is why it is crucial to run geth in mining mode, throughout the program execution.  
 
 ### The procedure
 
