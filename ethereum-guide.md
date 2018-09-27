@@ -385,9 +385,9 @@ You can easily test access to your node using ```curl```. More information [here
 
 ### Java Access
 
-This section indicates the minimum steps to hook up a Java project to an HTTP-enabled geth node.
+This section demonstrates the minimal setup towards a Java driven blockchain access..
 
-#### Web3j
+#### Dependencies
 
 Though vanilla Java provides utilities for HTTP communication, we will use the ```web3j``` library to abstract this layer away from our code. 
 
@@ -407,7 +407,7 @@ Easiest way is to set up your java project to use a [build automation tool](http
 
 *Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
-#### Transfering ether
+#### Code
 
 The simplest example once more is to transfer ether between accounts. To implement this with java/web3j you need to do three things:  .
 
