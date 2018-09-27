@@ -593,7 +593,7 @@ The java code for deploying a smart contract in the blockchain is similar to tra
 * You gain access to an account.  
 * You effectuate a transaction.  
 
-As you see only the third acction differs from the previous java snippet:  
+As you see only the third line differs from the previous java snippet:  
 
 ```java
     // Connect to local node
@@ -606,8 +606,7 @@ As you see only the third acction differs from the previous java snippet:
     Mirrorcontract.deploy(web3, credentials, DefaultGasProvider.GAS_PRICE, DefaultGasProvider.GAS_LIMIT).send();
 ```
 
-When executing the code you geth node will immediately log the persistence of your contract:
-
+Once more you can track the effect of your transaction in geths logs:  
 ```bash
     INFO [09-26|17:46:20.708] Setting new local account                address=0x3c7b081d3e608525A2efB821e80d597Cef7a435c
     INFO [09-26|17:46:20.708] Submitted contract creation              fullhash=0xf6e29728627250aace189814f4bb069ecd4a9d4cc38aa040f0a17e7a8a37ccfc contract=0x6b557c7a68C2e9919c2Be1c3B4772e792b6F44E9
