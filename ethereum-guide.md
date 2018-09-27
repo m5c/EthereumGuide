@@ -606,6 +606,8 @@ As you see only the third line differs from the previous java snippet:
     Mirrorcontract.deploy(web3, credentials, DefaultGasProvider.GAS_PRICE, DefaultGasProvider.GAS_LIMIT).send();
 ```
 
+*Note: The last line returns a Mirrorcontract instance that you can use for further interactions.*  
+
 Once more you can track the effect of your transaction in geths logs:  
 ```bash
     INFO [09-26|17:46:20.708] Setting new local account                address=0x3c7b081d3e608525A2efB821e80d597Cef7a435c
@@ -621,7 +623,7 @@ To interact with a smart contract, you can do simple method call on the contract
 ```java
     // Will send a string to the mirror-contract, living on the blockchain, 
     // wait for the EVM to run the code, then print the contract's reply to
-    // console
+    // console.
     System.out.println(mirrorContract.reflect("Hello, smart-world!")
 ```
 
