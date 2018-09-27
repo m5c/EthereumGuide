@@ -449,14 +449,13 @@ A smart contract is a program that resides in the blockchain. We therefore hold 
 
 ### Transactions
 
-You can not use smart contracts without a basic understanding of transactions. Transactions are the payload of blocks. In "[Transfering Ether](#transfering-ether)" you have already gotten to know the first and most common type of transactions. 
-Ethereum defines only two more kinds of transactions:
+You can not use smart contracts without a basic understanding of transactions. Transactions are the payload of blocks. With "[Transfering Ether](#transfering-ether)" you have already gotten to know the first and most common type for transactions. 
+Ethereum defines only two more types:
 
  * Deposit of a new smart contract in the blockchain.  
  * Calling a previously deposited smart contract.  
 
-
-the transaction must be embedded into a newly added block. This is why it is crucial to run geth in mining mode, throughout the program execution.  
+Commited transactions remain in a *pending state* until they have been embedded into a newly mined block. So apart from the transactions being already integrated into the blockchain there also is a dynamic pool of *unpersisted transactions*. This is why miners keep the chain alive. Though miners extend the blockchain for the sake of being rewarded, their actual contribution is the embedding of pending transactions into the blockchain. 
 
 ### The procedure
 
