@@ -225,7 +225,7 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 
 ### Mining
 
-Mining is the most straighforward way to obtain ether. In essential it means to invest computational power to keep the blockchain alive. Appending the chain by new blocks is nothing a puzzle. The miner who first resolves it is immediately rewarded by a single ether.
+Mining is the most straighforward way to obtain ether. Essentially it means to invest computational power to keep the blockchain alive. Appending the chain by new blocks is nothing a puzzle. The miner who first resolves it is immediately rewarded by a single ether.
 
 You have two options for mining. 
 
