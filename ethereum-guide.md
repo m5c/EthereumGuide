@@ -205,9 +205,11 @@ Querrying is the act of resolving the amount of ether attached to an account, re
 
 *Note: By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look out for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
 
-*Note: When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctr-C```. ```Ctr-D``` brings you back to the parent bash.*
+*Note: When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctrl-C```. ```Ctrl-D``` brings you back to the parent bash.*
 
 To then print the current balance in *Wei*, type:  
+
+*Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
         eth.getBalance("0x...hashofyouraccounthere")  
 
@@ -217,7 +219,6 @@ If you prefer a direct conversion into *Ether*, wrap your command with a call to
     web3.fromWei(eth.getBalance(eth.coinbase), "ether")  
 ```
 
-*Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
 
 By now you have not done any mining. Therefore you will see a sad output of ```0``` either way.
 
