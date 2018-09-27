@@ -521,13 +521,27 @@ The EVM can not interpret solidity sources. You have to compile your contract in
 ```bash
     solc Mirror.sol --bin --abi --optimize -o ../build
 ```
+This will generate and fill a ```build``` directory.
 
-This will generate four files:  (Correlates to the ```contract``` signatures of your solitude file.)
+By now your project structure should look like this:
 
- * ```../build/mortal.bin```  
- * ```../build/mortal.abi```  
- * ```../build/mirrorcontract.bin```  
- * ```../build/mirrorcontract.abi```  
+```bash
+    .
+    ├── README.md
+    ├── contracts
+    │   ├── build              <--- This directory was generated (contract binaries)
+    │   │   ├── mirrorcontract.abi
+    │   │   ├── mirrorcontract.bin
+    │   │   ├── mortal.abi
+    │   │   └── mortal.bin
+    │   └── solidity
+    │       └── Mirror.sol	
+    ├── pom.xml
+    ├── src
+    │   └── ...
+    └── target
+        └── ...
+```
 
 #### Generation of a Java wrapper for smart contract binaries
 
