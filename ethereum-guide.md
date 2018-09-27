@@ -640,7 +640,7 @@ Before starting with whatsoever P2P configuration, ensure your network configura
 
  * Ensure machines have unique IPs  
  * Ensure machines are in the same subnet  
- * Ensure dedicated ports are open  
+ * Ensure dedicated ports are open, no port used twice 
  * Test ICMP connection  
 
 Further illustrations refer to the following two-machine demo setup:
@@ -693,7 +693,17 @@ To query the enode address of *Machine I*, launch a geth console for your initia
  geth --datadir="nameOfYourChainGoesHere" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.6.1 --netrestrict 192.168.6.0/24 console
 ```
 
-*Note: Adapt datadir, networkid, port, rpcport, rpcaddr.*
+*Note: Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
+
+Changes:  
+ * ```--verbosity=4```: Low number means less output, higher more. 4 is a reasonable setting for getting problems printed without having your entire screen flooded with logs.
+ * Remove ```--nodiscover``` -> you want to use P2P functionality, right ;-)
+ * ```--ipcdisable``` -> no need for interprocess communication, we want the nodes to interact over LAN
+ *  ```--port 303XY```, where X is count of your hexanome and Y the count of your PCs (so first pc is 1, second 2 , ...) -> reason is we must not have two machines with the same port for the P2P to work.
+ *  ```--rpcport 81XY```, same reason (remote procedure calls need a unique target)
+ * ```--rpcaddr 192.168.a.b``` , matching the physical address of your ethernet card.
+ *  ```--netrestrict 192.168.10.0/24``` because we want to start a P2P net only in the LAN, noit share it with the entire world.
+
 
 Once geth is running, type:
 ```bash
@@ -705,27 +715,17 @@ Once geth is running, type:
 
 #### Connect
 
+On *Machine II*, launch geht with:
 
-One ONE client (and only one!), start geth in console mode, create account, obtain some ether:
-geth --datadir="sharedchain" --networkid 1608199012345 --nodiscover console
-> personal.newAccount("maxou1")
-"0xed0ae7db863e9ce9afa43f028b596f4af06b20ad"
-> miner.start(1)
-Check balance, then abort geth
-> web3.fromWei(eth.getBalance(eth.coinbase), "ether")
+```bash
+ geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
+```
 
-NOW GO OFFLINE (you are starting a p2p connection. unless you have a good firewall you should not expose your PC to the entire wollt. Thats why we're using old school cable LAN for out network in class)
-Before connecting from other geth entity -> restart geth with following changes:
-add "--verbosity=4" Lowe number means less output, higher more. 4 is a reasonable setting for getting problems printed without having your entire screen flooded with logs.
-remove "--nodiscover" -> you want to use P2P functionality, right ;-)
-add "--ipcdisable" -> no need for interprocess communication, we want the nodes to interact over LAN
-add "--port 303XY", where X is count of your hexanome and Y the count of your PCs (so first pc is 1, second 2 , ...) -> reason is we must not have two machines with the same port for the P2P to work.
-add "--rpcport 81XY", same reason (remote procedure calls need a unique target)
-add "--rpcaddr 192.168.a.b" , matching the physical address of your ethernet card.
-add "--netrestrict 192.168.10.0/24" because we want to start a P2P net only in the LAN, noit share it with the entire world.
+*Note: Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
+
+
 so finally you should have (mac, machine 1)
 and (linux, machine 2)
- geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
 
 Alright last thing you need to do is to sync with an existing node. Therefore we use the enode-id we queried before:
 But careful! -> the enode string still contains a self reference "[::]" which is nothing else but "127.0.0.1", the localhost loopback ip. For the node who printed this string it was correct, but if we want to connect from another node it has to be changed for the actual ip. So if the first machine hat 192.168.5.1, we can now connect using the enode id:
