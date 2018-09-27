@@ -581,27 +581,29 @@ You will find a new java class in your sources:
         └── ...
 ```
 
-If you inspect the content of that file you will actually find the smart contract binary in a final String named ```BINARY```..
+If you inspect the content of that file you will actually find the smart contract binary in a final String named ```BINARY```.
 
 *Note: Never edit the content of generated files.*
 
 #### Deployment of a smart contract
 
-Saving the SC in the chain is straightforward. Load ```web3j``` and some valid account credentials (of the person who submits the SC) into local variables, then persist using the SCs ```deploy(...)``` method.
+The java code for deploying a smart contract in the blockchain is similar to transfering ether:
+ 
+* You connect to a node.  
+* You gain access to an account.  
+* You effectuate a transaction.  
+
+As you see only the third acction differs from the previous java snippet:  
 
 ```java
-        // Load web3j
-        Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
+    // Connect to local node
+    Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
 
-        // Load credentials:
-        Credentials credentials = WalletUtils.loadCredentials(
-          "accountpassword",
-          "/home/yourname/.ethereum/keystore/UTC--2018-04-12T12-55-28.874090257Z--ac3fbbf1b4649104f44377b3c33f401c9ac3f8df");
-          
-        // Persist the contract, using web3j and the credentials
-        Buffer contract = Buffer.deploy(
-          web3, credentials, GAS_PRICE, GAS_LIMIT,
-          "Hello blockchain world!").send();
+    // Load credentials for accessing wallet of source account
+    Credentials credentials = WalletUtils.loadCredentials(SOURCE_ACCOUNT_PASSWORD, LOCATION_SOURCE_ACCOUNT);
+
+    // Deploy the contract in the blockchain
+    Mirrorcontract.deploy(web3, credentials, DefaultGasProvider.GAS_PRICE, DefaultGasProvider.GAS_LIMIT).send();
 ```
 
 When executing the code you geth node will immediately log the persistence of your contract:
