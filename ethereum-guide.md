@@ -481,18 +481,17 @@ This is simple example of a solidity code that receives a string and buffers it 
 
 ```solidity
     pragma solidity ^0.4.17;
-        contract mortal {
-            address owner;
-            constructor() public { owner = msg.sender; }
-            function kill() public { if (msg.sender == owner) selfdestruct(owner); }
+    contract mortal {
+        address owner;
+        constructor() public { owner = msg.sender; }
+        function kill() public { if (msg.sender == owner) selfdestruct(owner); }
+    }
+        
+    // contract with a single function that simply returns the input argument back to the caller
+    contract mirrorcontract is mortal {
+        function reflect(string _input) public pure returns (string) {
+     	    return _input;
         }
-
-        contract mirrorcontract is mortal {
-    
-            // mini-function that simply returns the input argument back to caller
-            function reflect(string _input) public pure returns (string) {
-        	    return _input;
-            }
     }  
 ```
 
@@ -514,8 +513,8 @@ This will generate four files:  (Correlates to the ```contract``` signatures of 
 
  * ```../build/mortal.bin```  
  * ```../build/mortal.abi```  
- * ```../build/buffer.bin```  
- * ```../build/buffer.abi```  
+ * ```../build/mirrorcontract.bin```  
+ * ```../build/mirrorcontract.abi```  
 
 **TODO: get rid of warnings at compilation**
 **TODO: adapt command and filenames (buffer - helloworld)**
