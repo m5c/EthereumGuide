@@ -523,7 +523,7 @@ Default relative location of smart contract source file in a Java-Dapp:
 
 #### Compilation of solidity code to binaries
 
-Smart contracts are executed by the [Ethereum Virtual Machine](https://www.mycryptopedia.com/ethereum-virtual-machine-explained/). However, the EVM can not interpret solidity sources. You have to compile your contract into binaries first.
+Smart contracts are executed by the [Ethereum Virtual Machine](https://www.mycryptopedia.com/ethereum-virtual-machine-explained/) (EVM). However, the EVM can not interpret solidity sources. You have to compile your contract into binaries first.
 
  * ```cd``` into your projects ```solidity``` directory.  
 
@@ -600,7 +600,7 @@ If you inspect the content of that file you will actually find the smart contrac
 The java code for deploying a smart contract in the blockchain is similar to transferring ether:
  
 * You connect to a node.  
-* You gain access to an account.  
+* You authenticate into an account.  
 * You effectuate a transaction.  
 
 As you see only the third line differs from the previous java snippet:  
