@@ -167,6 +167,8 @@ At any given moment you can list the available accounts, using:
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
 
+*Note: The default account is always the first one you created.*
+
 ### Creation
 
 The ```geth account new``` command adds a new account. When prompted enter the same password twice:  
