@@ -78,7 +78,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
  * Download Web3J, extract and create terminal reference:  
 
-*-Same as Linux instructions above, but first install the download tool, using ```brew wget```-*
+*Same as Linux instructions above, but first install the download tool, using ```brew install wget```*
 
  * Install solidity:  
 
