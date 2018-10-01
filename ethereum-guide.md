@@ -14,9 +14,9 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
  * [Web3J](https://web3j.io/): Java library for integrating with nodes on Ethereum blockchains.
  * [Solidity](https://solidity.readthedocs.io/en/v0.4.25/): Language for implementing smart contracts, designed to target the Ethereum Virtual Machine.
 
-### Installation
+### UNIX (Like) Installation
 
-#### Ubuntu Linux
+#### Ubuntu / Raspbian
 
  * Install geth:  
 
