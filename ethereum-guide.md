@@ -390,7 +390,7 @@ You can easily test access to your node using ```curl```. More information [here
 
 ### Java Access
 
-This section demonstrates the minimal setup towards a Java driven blockchain access..
+This section demonstrates the minimal setup towards a Java driven blockchain access.
 
 #### Dependencies
 
