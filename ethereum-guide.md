@@ -29,9 +29,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
     sudo apt-get install ethereum  
 ```
 
-    (Gentoo equivalent: ```emerge -a net-p2p/go-ethereum````)
-
-*[Ubuntu equivalent](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)*
+*(Gentoo equivalent: ```emerge -a net-p2p/go-ethereum````)*
 
  * Download Web3J, extract and create terminal reference:  
 
