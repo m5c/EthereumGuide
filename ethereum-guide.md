@@ -455,7 +455,7 @@ A smart contract is a program that resides in the ethereum blockchain. Ethereum 
 
 *Note: "Correctness" applies from a security point of view, here. We stipulate that computed outputs correlate to deposited code. But semantically a smart contract is still prone to errors.*
 
-*Everything you need to know and many more code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
+*More information and code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
 
 ### Transactions
 
