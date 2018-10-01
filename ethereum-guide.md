@@ -154,9 +154,9 @@ Also, this will create a new subdirectory in your *ethereum base directory*. If 
 
 *More information on accounts [here](https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts).*
 
-Every intercation with a blockchain takes place on behalf of an account. So in order to do anything with your newly created blockchain you now need at least one account.  
+Every interaction with a blockchain takes place on behalf of an account. So in order to do anything with your newly created blockchain you now need at least one account.  
 **Hint:**
-By default all geth commands are bound to the default chain. This involves the creation of new accounts. You can override this behaviour by providing a path to your own chain. Use the ```--datadir /some/path/``` switch. You can also use relative paths. A good practive is to ```cd``` into your *ethereum base dir* and then only provide the name of your chain as parameter.
+By default all geth commands are bound to the default chain. This involves the creation of new accounts. You can override this behavior by providing a path to your own chain. Use the ```--datadir /some/path/``` switch. You can also use relative paths. A good practice is to ```cd``` into your *ethereum base dir* and then only provide the name of your chain as parameter.
 
 ### Querying
 
@@ -179,7 +179,7 @@ The ```geth account new``` command adds a new account. When prompted enter the s
     Address: {67b7b218cb53611612e2983cf2fa45ce01540cf9}  
 ```
 
-The last line indicates the unique address of your new account. When later transfering ether between accounts we need this address. This address is also referred to as the coinbase.  
+The last line indicates the unique address of your new account. When later transferring ether between accounts we need this address. This address is also referred to as the coinbase.  
 If you now check the content of your ~/.ethereum directory the newly created account will show up there.
 
         schieder@chartreuse:.ethereum $ tree  
@@ -198,9 +198,9 @@ Of course you do not need to inspect the file system to find your new account yo
 Each account has an amount of ether attached. This amount can be considered as *funds*. Stakeholders who want to deposit something into the blockchain must pay a tiny amount of ether to do so.  
 Without ether, accounts are very limited in their actions.
 
-*Additional information and commands realted to mining can be found [here](https://github.com/ethereum/go-ethereum/wiki/mining) and [here](https://github.com/turboprep/geth-tutorial).*
+*Additional information and commands related to mining can be found [here](https://github.com/ethereum/go-ethereum/wiki/mining) and [here](https://github.com/turboprep/geth-tutorial).*
 
-### Querrying
+### Querying
 
 Querrying is the act of resolving the amount of ether attached to an account, regarding the blockchains most recent state. To look that amount up, first open a geth console, using:
 
@@ -228,7 +228,7 @@ By now you have not done any mining. Therefore you will see a sad output of ```0
 
 ### Mining
 
-Mining is the most straighforward way to obtain ether. Essentially it means to invest computational power to keep the blockchain alive. To append the chain by a new block we need to solve a puzzle. The miner who first resolves it is immediately rewarded by a single ether.
+Mining is the most straightforward way to obtain ether. Essentially it means to invest computational power to keep the blockchain alive. To append the chain by a new block we need to solve a puzzle. The miner who first resolves it is immediately rewarded by a single ether.
 
 You have two options for mining. 
 
@@ -255,7 +255,7 @@ This implicitly means one ether was added to your account.
 
 #### Multi-Cores
 
-By default geth mines with only a single CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totaly reasonable.)  
+By default geth mines with only a single CPU core. (You can argue about [mining on the main chain with CPU power](https://bitcoin.stackexchange.com/questions/5608/how-does-one-calculate-the-profitability-of-gpu-mining), but on a private chain this is totally reasonable.)  
 Anyhow you can slightly speed up the "Obtaining Ether" process by telling ```geth``` to use more CPU cores for the mining.  
 
 ```bash
@@ -281,9 +281,9 @@ Alternatively you can refer to the index of the account. The order corresponds t
     geth account list
 ```
 
-### Transfering Ether
+### Transferring Ether
 
-Another way to boost an accounts balance is to transfer ether from another account. Before actually transfering the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 15 seconds, using the password ```abc123```. The seconds command sends ```42``` ether from account at index ```0``` to account at index ```1```.
+Another way to boost an accounts balance is to transfer ether from another account. Before actually transferring the ether, the sending account must be unlocked. In the following example the first account at index ```0``` was unlocked for 15 seconds, using the password ```abc123```. The seconds command sends ```42``` ether from account at index ```0``` to account at index ```1```.
 
 ```bash
     > web3.personal.unlockAccount(web3.personal.listAccounts[0],"abc123", 15)
@@ -294,7 +294,7 @@ Another way to boost an accounts balance is to transfer ether from another accou
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-As you remember querrying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing, it still has to "arrive" in the blockchain. For that to happen it must still be "wrapped" by a new block. As you will read [a little later](#transactions), transfering ether is one of three possible *transaction* types. From the moment of their registration, transactions first remain in a pending state where they are only queued for persistence. It is only when a new block is mined that they are eventually integrated into the blockchain. Precisely they are the payload of that new block.  
+As you remember querying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing, it still has to "arrive" in the blockchain. For that to happen it must still be "wrapped" by a new block. As you will read [a little later](#transactions), transfering ether is one of three possible *transaction* types. From the moment of their registration, transactions first remain in a pending state where they are only queued for persistence. It is only when a new block is mined that they are eventually integrated into the blockchain. Precisely they are the payload of that new block.  
 **tl;dr: Your transfer has no visible effect until you mine at least one more block.**
 
 If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfer will be rejected.
@@ -365,7 +365,7 @@ By now you should already have this covered. If not, create your [private blockc
 
 #### Run an HTTP-enabled geth node
 
-As *RPC* is a network-protocol, you could send your HTTP commands to any availbale *RPC*-enabled node. Unfortunately in the context of a private local chain there are none around. You have to operate your own node for all proxied access. Remember, this node must keep running throughout the entire execution of your program.  
+As *RPC* is a network-protocol, you could send your HTTP commands to any available *RPC*-enabled node. Unfortunately in the context of a private local chain there are none around. You have to operate your own node for all proxied access. Remember, this node must keep running throughout the entire execution of your program.  
 
 ```bash
     geth --rpcapi personal,db,eth,net,web3 --rpc --mine --minerthreads=4 console  
@@ -375,7 +375,7 @@ The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up t
 
 For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
-*Note: As mentioned in the ["Transfering Ether"](#transfering-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp not be able to effectuate actions that internally require [transactions](#transactions). If you use synchronous API-calls it will even block.*
+*Note: As mentioned in the ["Transferring Ether"](#transferring-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp not be able to effectuate actions that internally require [transactions](#transactions). If you use synchronous API-calls it will even block.*
 
 
 #### Test accessing your node
@@ -457,13 +457,13 @@ A smart contract is a program that resides in the blockchain. We therefore hold 
 
 ### Transactions
 
-You can not use smart contracts without a basic understanding of transactions. Transactions are the payload of blocks. With "[Transfering Ether](#transfering-ether)" you have already gotten to know the first and most common type for transactions. 
+You can not use smart contracts without a basic understanding of transactions. Transactions are the payload of blocks. With "[Transferring Ether](#transferring-ether)" you have already gotten to know the first and most common type for transactions. 
 Ethereum defines only two more types:
 
  * Deposit of a new smart contract in the blockchain.  
  * Calling a previously deposited smart contract.  
 
-Commited transactions remain in a *pending state* until they have been embedded into a newly mined block. So apart from the transactions being already integrated into the blockchain there is a dynamic pool of *unpersisted transactions*. This is why miners keep the chain alive. Though miners extend the blockchain for the sake of being rewarded, their actual contribution is the integration of pending transactions into the blockchain. 
+Committed transactions remain in a *pending state* until they have been embedded into a newly mined block. So apart from the transactions being already integrated into the blockchain there is a dynamic pool of *unpersisted transactions*. This is why miners keep the chain alive. Though miners extend the blockchain for the sake of being rewarded, their actual contribution is the integration of pending transactions into the blockchain. 
 
 ### Workflow
 
@@ -593,7 +593,7 @@ If you inspect the content of that file you will actually find the smart contrac
 
 #### Deployment of a smart contract
 
-The java code for deploying a smart contract in the blockchain is similar to transfering ether:
+The java code for deploying a smart contract in the blockchain is similar to transferring ether:
  
 * You connect to a node.  
 * You gain access to an account.  
@@ -622,9 +622,9 @@ Once more you can track the effect of your transaction in geths logs:
 
 ### Interact with a smart contract
 
-Web3j abtracts the entire asynchronous communication with gath away from you and even simulated a synchronous behaviour. This way you can interact with the smart contract as if it were operating on a local object.
+Web3j abstracts the entire asynchronous communication with geth away from you and even simulated a synchronous behavior. This way you can interact with the smart contract as if it were operating on a local object.
 
-To interact with a smart contract, you can do simple method call on the contract-object you received upon deploment:
+To interact with a smart contract, you can do simple method call on the contract-object you received upon deployment:
 
 ```java
     // Will send a string to the mirror-contract, living on the blockchain, 
@@ -635,7 +635,7 @@ To interact with a smart contract, you can do simple method call on the contract
 
 ## Clusters
 
-So far all instractions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advantages (integrity, availability) from the fact that they can be spread out and operated within large decentral networks.  
+So far all instructions were scoped on single-machine setups. However blockchains are distributed technologies and gain their primary advantages (integrity, availability) from the fact that they can be spread out and operated within large networks.  
 This section indicates how to set up new chains in multi-machine networks.
 
 *More information on clusters and their setup [here](https://github.com/ethereum/go-ethereum/wiki/Setting-up-private-network-or-local-cluster), [here](https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth), [here](http://iotbl.blogspot.com/2017/03/setting-up-private-ethereum-testnet.html) and [here](https://ethereum.stackexchange.com/questions/12436/how-to-communicate-with-a-remote-node).*
@@ -665,7 +665,7 @@ Further illustrations refer to the following two-machine demo setup:
 ### Common genesis
 
 The most important thing when setting up a new blockchain, is using the **exact** same genesis block on all machines. Semantic equivalence is not sufficient, the files must be bitwise identical.  
-Best practice is to write the file on one machine and then transfere it to the other over the network.
+Best practice is to write the file on one machine and then transfer it to the other over the network.
 
  * [Write a genesis json file](#genesis-block) on *Machine I*. Make sure to use a unique chain id.
 
