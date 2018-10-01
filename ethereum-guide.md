@@ -475,7 +475,7 @@ Developing and using a smart contracts always follows the same pattern.
  * [Compile](#compilation-of-solidity-code-to-binaries)  
  * [Generate Java wrappers](#generation-of-a-java-wrapper-for-smart-contract-binaries)  
  * [Deploy](#deployment-of-a-smart-contract)  
- * [Call](#tata)  
+ * [Call](#interact-with-a-smart-contract)  
 
 The following subsections illustrate the process on the example of a Java Dapp that first deposits a smart contract "mirror". It is a minimal smart contract that merely offers a single function "reflect". When reflect is called it simply returns the received input string. After the deployment the Dapp calls the contract with ```Hello, smart-world!``` and prints the return value. Complete sources of a demo implementation can be found [here](https://kartoffelquadrat.eu:5050/maex/smart-contract-demo). 
 
