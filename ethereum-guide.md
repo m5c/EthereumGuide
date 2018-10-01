@@ -396,7 +396,7 @@ This section demonstrates the minimal setup towards a Java driven blockchain acc
 
 Though vanilla Java provides utilities for HTTP communication, we will use the ```web3j``` library to abstract this layer away from our code. 
 
-Easiest way is to set up your java project to use a [build automation tool](https://en.wikipedia.org/wiki/Build_automation) that resolves the dependencies for you. In your IDE, [create a new maven project](https://www.youtube.com/watch?v=pt3uB0sd5kY). To then integrate ```web3j``` into your project, add the following dependency to your ```pom.xml```: 
+Easiest way is to set up your java project to use a [build automation tool](https://en.wikipedia.org/wiki/Build_automation) that resolves the dependencies for you. In your IDE, [create a new maven project](https://www.jetbrains.com/help/idea/maven-support.html). To then integrate ```web3j``` into your project, add the following dependency to your ```pom.xml```: 
 
 ```xml 
     <dependencies>
