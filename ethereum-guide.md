@@ -85,11 +85,6 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
     brew linkapps solidity  
 ```
 
-#### Windows
-
- * Erase your hard drive
- * Install [Ubuntu](https://builtvisible.com/the-ubuntu-installation-guide/)
-
 ### Files
 
 All files relevant to the following guide reside in a special directory, the *ethereum base directory*. Your blockchain data and affiliated accounts reside in that directory. If you delete it you start from scratch.  
