@@ -1,7 +1,7 @@
 # Hands-On Ethereum Guide
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
 [Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)  
-[Liris labs](https://liris.cnrs.fr/), [DRIM](), [INSA Lyon](https://www.insa-lyon.fr/).
+[Liris labs](https://liris.cnrs.fr/), [DRIM](https://liris.cnrs.fr/en/team/drim), [INSA Lyon](https://www.insa-lyon.fr/).
 
 *Note: This file is under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.*
 
