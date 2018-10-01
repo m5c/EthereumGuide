@@ -1,7 +1,7 @@
 # Hands-On Ethereum Guide
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
 [Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)  
-[Liris labs](), [INSA Lyon]().
+[Liris labs](https://liris.cnrs.fr/), [DRIM](), [INSA Lyon](https://www.insa-lyon.fr/).
 
 *Note: This file is under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.*
 
@@ -375,7 +375,7 @@ The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up t
 
 For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
-*Note: As mentioned in the ["Transferring Ether"](#transferring-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp not be able to effectuate actions that internally require [transactions](#transactions). If you use synchronous API-calls it will even block.*
+*Note: As mentioned in the ["Transferring Ether"](#transferring-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp will not be able to execute actions that internally require [transactions](#transactions). If you use synchronous API-calls it will even block.*
 
 
 #### Test accessing your node
