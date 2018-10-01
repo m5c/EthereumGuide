@@ -603,6 +603,8 @@ The java code for deploying a smart contract in the blockchain is similar to tra
 * You authenticate into an account.  
 * You effectuate a transaction.  
 
+As you see only the third line differs from the [previous java snippet](#java-access):  
+
 ```java
     // Connect to local node
     Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
