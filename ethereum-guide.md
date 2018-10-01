@@ -238,7 +238,7 @@ You have two options for mining.
 
 #### DAG generation
 
-The first time you start to mine, geth will build a [directed acyclic graph](https://github.com/ethereum/wiki/wiki/Mining#ethash-dag). Having a DAG is precondition to running ethereums [proof-of-work](https://cointelegraph.com/explained/proof-of-work-explained) algorithm and therefore also to mining. So in contrast to bitcoin, ethereum has an integrated protection against ASIC mining.
+The first time you start to mine, geth will build a [directed acyclic graph](https://github.com/ethereum/wiki/wiki/Mining#ethash-dag). Having a DAG is precondition to running ethereums [proof-of-work](https://cointelegraph.com/explained/proof-of-work-explained) algorithm and therefore also to mining itself. Building the DAG is memory intense. In the context of ethereum it serves as an integrated protection against [ASIC mining](https://www.digitaltrends.com/computing/what-is-an-asic-miner/).
 Throughout the DAG generation you will repeatedly see some log: ```Generating DAG in progress```
 
 #### Reward
