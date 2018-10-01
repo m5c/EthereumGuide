@@ -167,7 +167,7 @@ At any given moment you can list the available accounts, using:
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
 
-*Note: Unless another account is explicitly specified, geth uses your first account created as default.*
+*Note: Unless another account is explicitly specified, geth uses your oldest account as default.*
 
 ### Creation
 
