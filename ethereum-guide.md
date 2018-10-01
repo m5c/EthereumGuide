@@ -523,7 +523,7 @@ Default relative location of smart contract source file in a Java-Dapp:
 
 #### Compilation of solidity code to binaries
 
-The EVM can not interpret solidity sources. You have to compile your contract into binaries.
+Smart contracts are executed by the [Ethereum Virtual Machine](https://www.mycryptopedia.com/ethereum-virtual-machine-explained/). However, the EVM can not interpret solidity sources. You have to compile your contract into binaries first.
 
  * ```cd``` into your projects ```solidity``` directory.  
 
