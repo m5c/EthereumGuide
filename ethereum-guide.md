@@ -1,6 +1,7 @@
 # Hands-On Ethereum Guide
 By [Maximilian Schiedermeier](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
-[Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)
+[Email](mailto:maximilian.schiedermeier@insa-lyon.fr), [Public Encryption Key](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7010339C4391A4F3)  
+[Liris labs](), [INSA Lyon]().
 
 *Note: This file is under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.*
 
@@ -297,7 +298,7 @@ Another way to boost an accounts balance is to transfer ether from another accou
 
 *Note: Instead of specifying source and target account by ```eth.accounts[x]``` you can always use hash-adresses wrapped in ticks: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*  
 
-As you remember querying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing, it still has to be integrated into the blockchain. For that to happen the blockchain must be appended by a new block which contains the tranfer. As you will read [a little later](#transactions), transfering ether is one of three possible *transaction* types. From the moment of their registration, transactions first remain in a pending state where they are only queued for persistence. It is only when a new block is mined that they are eventually integrated into the blockchain. Precisely they are the payload of that new block.  
+As you remember querying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing, it must still become part of the blockchain. Precisely the blockchain must be appended by a new block to contain the tranfer. As you will read [a little later](#transactions), transfering ether is one of three possible *transaction* types. From the moment of their registration, transactions first remain in a pending state where they are only queued for persistence. It is only when a new block is mined that they are eventually integrated into the blockchain. Precisely they are the payload of that new block.  
 **tl;dr: Your transfer has no visible effect until you mine at least one more block.**
 
 If you forget to unlock the senders account or exceed the authorized time frame (here 15 seconds), the transfer will be rejected.
@@ -341,7 +342,7 @@ Once you have imported a script, you can directly call functions defined within.
 
 ## Basic Programmatic Access
 
-This far all described blockchain interactions were effectuated manually. This means whenever you accessed the blockchain, you did so used either the ```geth``` command or its built-in console. But geth can also expose its functionality and work as a proxy. The two most outstanding ways to achieve this are:  
+Thus far all described blockchain interactions were executed manually. This means whenever you accessed the blockchain, you did so using either the ```geth``` command or its built-in console. But geth can also expose its functionality and work as a proxy. The two most outstanding ways to achieve this are:  
 
  * Using *RPCs* (Remote Procedure Calls)  
 Geth acts as a proxy on a given port and ip. Can be seen as the more generic one, for it allows accessing a remote node over a network connection.
@@ -349,11 +350,11 @@ Geth acts as a proxy on a given port and ip. Can be seen as the more generic one
  * Using *IPC* (Inter Process Communication)
 Geth opens a unix socket for other processes running on the same machine. There are ways to later expose the socket over the network, but usually this method is only used for local access.
 
-This guide covers *RPC* access, only.
+This guide covers *RPC* access.
 
 ### Preparations
 
-Before using ```geth```s *RPC* functionality from a high-level programming language, you must ensure that...
+Before using ```geth```-*RPC* functionality from a high-level programming language, you must ensure that...
 
  * ... you have access to an account with some ether.
  * ... you have access to an *RPC-enabled* geth node.
