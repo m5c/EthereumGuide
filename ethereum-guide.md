@@ -352,6 +352,8 @@ Geth opens a unix socket for other processes running on the same machine. There 
 
 This guide covers *RPC* access.
 
+*Note: You are still working on a local chain with only a single node. The network functionality described here only concerns the communication with local programs that use your geth node as an entry point. *
+
 ### Preparations
 
 Before using ```geth```-*RPC* functionality from a high-level programming language, you must ensure that...
