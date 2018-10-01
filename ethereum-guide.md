@@ -51,8 +51,6 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
  * Install solidity:  
 
 ```bash
-    sudo add-apt-repository ppa:ethereum/ethereum
-    sudo apt-get update
     sudo apt-get install solc
 ```
 
