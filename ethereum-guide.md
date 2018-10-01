@@ -503,6 +503,8 @@ This is simple example of a smart contract named ```mirror``` with a single func
     }  
 ```
 
+*See [here](https://solidity.readthedocs.io/en/v0.4.25/introduction-to-smart-contracts.html) for more information on the Solidity language and its syntax.*
+
 Default relative location of smart contract source file in a Java-Dapp:  
 
 ```bash
