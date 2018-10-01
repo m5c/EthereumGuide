@@ -19,6 +19,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 #### Ubuntu Linux
 
  * Install geth:  
+
 ```bash
     sudo apt-get install software-properties-common
     sudo add-apt-repository -y ppa:ethereum/ethereum
@@ -29,10 +30,16 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 *(Gentoo: ```emerge -a net-p2p/go-ethereum````)*
 
  * Download Web3J, extract and create terminal reference:  
+
 ```bash
+    echo "[Downloading...]"  
     wget https://github.com/web3j/web3j/releases/download/v3.5.0/web3j-3.5.0.zip  
+
+    echo "[Extracting...]"  
     unzip web3j-3.5.0.zip  
     rm web3j-3.5.0.zip  
+
+    echo "[Linking...]"  
     echo '#!/bin/bash' >> ~/bin/web3j  
     echo '~/web3j-3.5.0/bin/web3j "$@"' >> ~/bin/web3j  
     chmod +x ~/bin/web3j
@@ -42,6 +49,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
 
  * Install solidity:  
+
 ```bash
     sudo add-apt-repository ppa:ethereum/ethereum
     sudo apt-get update
