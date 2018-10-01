@@ -16,9 +16,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
 ### Installation
 
-#### Linux
-
-*Note: The ```emerge -a``` commands are for gentoo. Ubuntu users, click the links below for equivalent ```apt-get install``` commands.*
+#### Ubuntu Linux
 
  * Install geth:  
 
@@ -29,7 +27,7 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
     sudo apt-get install ethereum  
 ```
 
-*(Gentoo equivalent: ```emerge -a net-p2p/go-ethereum````)*
+*(Gentoo: ```emerge -a net-p2p/go-ethereum````)*
 
  * Download Web3J, extract and create terminal reference:  
 
@@ -48,10 +46,13 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
  * Install solidity:  
 
 ```bash
-    emerge -a dev-lang/solidity
+    sudo add-apt-repository ppa:ethereum/ethereum
+    sudo apt-get update
+    sudo apt-get install solc
 ```
 
-*[Ubuntu equivalent](https://solidity.readthedocs.io/en/v0.4.21/installing-solidity.html)*
+*(Gentoo: ```emerge -a dev-lang/solidity```)*
+
 
 #### Mac
 
