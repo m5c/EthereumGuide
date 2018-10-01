@@ -238,8 +238,7 @@ You have two options for mining.
 
 #### DAG generation
 
-The first time you start to mine, geth will build a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) representation of the chain in the RAM. As your private chain consists only of a genesis block, this goes super fast. If later you start mining on huge public chains this step will take some minutes.  
-
+The first time you start to mine, geth will build a [directed acyclic graph](https://github.com/ethereum/wiki/wiki/Mining#ethash-dag). Having a DAG is precondition to running ethereums [proof-of-work](https://cointelegraph.com/explained/proof-of-work-explained) algorithm and therefore also to mining. So in contrast to bitcoin, ethereum has an integrated protection against ASIC mining.
 Throughout the DAG generation you will repeatedly see some log: ```Generating DAG in progress```
 
 #### Reward
