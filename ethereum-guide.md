@@ -465,7 +465,7 @@ Ethereum defines only two more types:
  * Deposit of a new smart contract in the blockchain.  
  * Calling a previously deposited smart contract.  
 
-Committed transactions remain in a *pending state* until they have been embedded into a newly mined block. So apart from the transactions being already integrated into the blockchain there is a dynamic pool of *unpersisted transactions*. This is why miners keep the chain alive. Though miners extend the blockchain for the sake of being rewarded, their actual contribution is the integration of pending transactions into the blockchain. 
+Committed transactions remain in a *pending state* until they have been embedded into a newly mined block. So apart from the transactions being already integrated into the blockchain there is a dynamic pool of *unpersisted transactions*. These are all transactions that are scheduled for integration but not yet part of a newly mined block. This is why miners keep the chain alive. Though miners extend the blockchain for the sake of being rewarded, their actual contribution is the integration of pending transactions into the blockchain. 
 
 ### Workflow
 
