@@ -86,6 +86,15 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
     brew linkapps solidity  
 ```
 
+### Windows
+
+You have three options, but I strongly recommend the third:  
+ * Find a way to install the tools for windows, adapt all unix-scripts that show up in this guide (you will be slower than other teams).  
+ * Run Linux within your Windows installation, using a virtualization software (will be more complicated than the original guide when we get to networking -> your job to make it work)  
+    * Windows 10: You can use [HyperV](https://www.windowscentral.com/how-run-linux-distros-windows-10-using-hyper-v)  
+    * Windows XP/Vista/7/8: Use [VirtualBox](http://www.psychocats.net/ubuntu/virtualbox)  
+ * [Install Linux natively](https://builtvisible.com/the-ubuntu-installation-guide/) on your PC (You can install it next to your Windows installation)
+
 ### Files
 
 All files relevant to the following guide reside in a special directory, the *ethereum base directory*. Your blockchain data and affiliated accounts reside in that directory. If you delete it you start from scratch.  
@@ -764,4 +773,14 @@ Also on *machine II* verify if the enode of *machine I* is listed as peer:
 }]
 ```
 
+## Summing up
 
+Congratulations, you have made it through this guide and achieved the following competences:
+
+ * Running geth nodes
+ * Creating accounts and private chains
+ * Setting up decentralized local blockchain networks
+ * Coding smrt contracts
+ * Programmatically interacting with the blockchain.
+
+As such you are now ready to develop your first Dapp. 
