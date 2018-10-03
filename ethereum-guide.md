@@ -679,6 +679,8 @@ Further illustrations refer to the following two-machine demo setup:
     +---------------------+                      +---------------------+
 ```
 
+*Note: On Unix platforms you can easily query and set IP-Layer configuration of your networking devices, using the [```ifconfig``` command](https://linux.die.net/man/8/ifconfig).* 
+
 ### Common genesis
 
 The most important thing when setting up a new blockchain, is using the **exact** same genesis block on all machines. Semantic equivalence is not sufficient, the files must be bitwise identical.  
