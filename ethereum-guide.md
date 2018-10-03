@@ -679,7 +679,7 @@ Further illustrations refer to the following two-machine demo setup:
     +---------------------+                      +---------------------+
 ```
 
-*Note: On Unix platforms you can easily query and set IP-Layer configuration of your networking devices, using the [```ifconfig``` command](https://linux.die.net/man/8/ifconfig).* 
+*Note: On Unix platforms you can easily query and set the IP-Layer configurations of your networking devices, using the [```ifconfig``` command](https://linux.die.net/man/8/ifconfig).* 
 
 ### Common genesis
 
