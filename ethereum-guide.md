@@ -730,7 +730,7 @@ Quick overview of parameter changes, compared to single machine setup:
  *  ```--netrestrict 192.168.10.0/24``` because we want to start a P2P net only in the LAN, noit share it with the entire world.
 
 
-Once geth is running, type:
+Once geth is running, we have to find out your entities enode. If you operate on the main chain, without the ```--nodiscover````option this is not needed. But we explicitly do not want geth to automatically connect to whatever nodes out there, only to a very specific list. Therfore we link them manually:  
 ```bash
 > admin.nodeInfo.enode  
 "enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
@@ -740,7 +740,7 @@ Once geth is running, type:
 
 #### Connect
 
-On *Machine II*, launch geth slightly modified arguments::
+On *Machine II*, launch geth slightly modified arguments:
 
 ```bash
     geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
@@ -748,7 +748,7 @@ On *Machine II*, launch geth slightly modified arguments::
 
 *Note: Adapt datadir, networkid, port, rpcport, rpcaddr according to  your setup.*
 
-Next connect to the enode running on *machine I*:  
+Next connect to the enode running on *machine I*, this will link them over the network and make them synchronize their blockchains:  
 ```bash
     > admin.addPeer("enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0")
 ```
@@ -783,10 +783,12 @@ Also on *machine II* verify if the enode of *machine I* is listed as peer:
 
 Congratulations, you have made it through this guide and achieved the following competences:
 
- * Running geth nodes
- * Creating accounts and private chains
+ * Preparing and configuring machines
+ * Operating geth nodes
+ * Creating accounts, querying and transfering ether
+ * Mining
  * Setting up decentralized local blockchain networks
- * Coding smrt contracts
+ * Coding simple smart contracts
  * Programmatically interacting with the blockchain.
 
-As such you are now ready to develop your first Dapp. 
+You are now ready to explore the development of Dapps. Good luck and have fun. May the sources be with you :-)
