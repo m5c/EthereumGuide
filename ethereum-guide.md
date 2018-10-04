@@ -708,7 +708,7 @@ Best practice is to write the file on one machine and then transfer it to the ot
 
 ### Enodes
 
-Next you need to synchronize your machines. This can be achieved with enodes. An enode is a unique address that serves as entry point to a running ethereum node. Usually a manual linkage of nodes is not necessary, because nodes automatically boot in a P2P mode that automatically discovers other nodes around. However we want to create our own network and ignore everything else around. Therefore we first disable the P2P mode, then establish the links amnually.
+Next you need to synchronize your machines. This can be achieved with enodes. An enode is a unique address that serves as entry point to a running ethereum node. Usually a manual linkage of nodes is not necessary, because nodes automatically boot in a P2P mode that automatically discovers other nodes around. However we want to create our own network and ignore everything else around. Therefore we first disable the P2P mode, then establish the links manually.
 
 #### Lookup
 
