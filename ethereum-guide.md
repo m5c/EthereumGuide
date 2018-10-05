@@ -668,15 +668,15 @@ Before starting with whatsoever P2P configuration, ensure your network configura
 
 Further illustrations refer to the following two-machine demo setup:
 ```
-    +---------------------+                      +---------------------+
-    |      MACHINE I      |                      |      MACHINE II     | 
-    +=====================+                      +=====================+
-    | Host: "Chartreuse"  |                      | Host: "Coral"       |
-    | Dev: eth0           |                      | Dev: eth0           |
-    | IP: 192.168.6.1/24  +========-RJ45-========+ IP: 192.168.6.2/24  |
-    | Port: 30301         |                      | Port: 30302         |
-    | OS: Mac Os 10.13.6  |                      | OS: Gentoo 4.12.11  |
-    +---------------------+                      +---------------------+
+    +-----------------------+                      +-----------------------+
+    |       MACHINE I       |                      |       MACHINE II      | 
+    +=======================+                      +=======================+
+    | Host: "Chartreuse"    |                      | Host: "Coral"         |
+    | Dev: eth0             |                      | Dev: eth0             |
+    | IP: 192.168.168.10/24 +========-RJ45-========+ IP: 192.168.168.20/24 |
+    | Port: 30301           |                      | Port: 30302           |
+    | OS: Mac Os 10.13.6    |                      | OS: Gentoo 4.12.11    |
+    +-----------------------+                      +-----------------------+
 ```
 
 *Note: On Unix platforms you can easily query and set the IP-Layer configurations of your networking devices, using the [```ifconfig``` command](https://linux.die.net/man/8/ifconfig).* 
@@ -690,7 +690,7 @@ Best practice is to write the file on one machine and then transfer it to the ot
 
  * Transfer the file to *Machine II*
 ```bash
-    scp genesis.json schieder@192.168.6.2:/tmp
+    scp genesis.json schieder@192.168.168.20:/tmp
 ```  
 
  * Verify the hashes are identical.  
@@ -715,7 +715,7 @@ Next you need to synchronize your machines. This can be achieved with enodes. An
 To query the enode address of *Machine I*, launch a geth console for your initialized blockchain. Parameters are a little different for a P2P setup.
 
 ```bash
- geth --datadir="nameOfYourChainGoesHere" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.6.1 --netrestrict 192.168.6.0/24 console
+ geth --datadir="nameOfYourChainGoesHere" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.168.10 --netrestrict 192.168.168.0/24 console
 ```
 
 *Note: Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
@@ -727,7 +727,7 @@ Quick overview of parameter changes, compared to single machine setup:
  *  ```--port 303XY```, where X is count of your hexanome and Y the count of your PCs (so first pc is 1, second 2 , ...) -> reason is we must not have two machines with the same port for the P2P to work.
  *  ```--rpcport 81XY```, same reason (remote procedure calls need a unique target)
  * ```--rpcaddr 192.168.a.b``` , matching the physical address of your ethernet card.
- *  ```--netrestrict 192.168.10.0/24``` because we want to start a P2P net only in the LAN, noit share it with the entire world.
+ *  ```--netrestrict 192.168.168.0/24``` because we want to restrict the P2P discovery to our LAN.
 
 
 Once geth is running, we have to find out your entities enode. If you operate on the main chain, without the ```--nodiscover````option this is not needed. But we explicitly do not want geth to automatically connect to whatever nodes out there, only to a very specific list. Therfore we link them manually:  
