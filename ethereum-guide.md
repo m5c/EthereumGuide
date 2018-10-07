@@ -452,7 +452,7 @@ Combined we end up with the following code snippet:
         Transfer.sendFunds(web3, credentialsWallet1, TARGET_ACCOUNT, BigDecimal.valueOf(AMOUNT), Convert.Unit.ETHER).sendAsync().get();
 ```
 
-*Note: Full demo code available [here](https://kartoffelquadrat.eu:5050/maex/transfer-ether-demo).*
+*Note: Full demo code available on moddle.*
 
 Also, you will be able to track the execution of your program on the debug output of your geth node. Between the mining messages you should see:  
 ```bash
@@ -490,7 +490,7 @@ Developing and using a smart contracts always follows the same pattern.
  * [Deploy](#deployment-of-a-smart-contract)  
  * [Call](#interact-with-a-smart-contract)  
 
-The following subsections illustrate the process on the example of a Java Dapp that first deposits a smart contract "mirror". It is a minimal smart contract that merely offers a single function "reflect". When reflect is called it simply returns the received input string. After the deployment the Dapp calls the contract with ```Hello, smart-world!``` and prints the return value. Complete sources of a demo implementation can be found [here](https://kartoffelquadrat.eu:5050/maex/smart-contract-demo). 
+The following subsections illustrate the process on the example of a Java Dapp that first deposits a smart contract "mirror". It is a minimal smart contract that merely offers a single function "reflect". When reflect is called it simply returns the received input string. After the deployment the Dapp calls the contract with ```Hello, smart-world!``` and prints the return value. Complete sources of a demo implementation can be found on moodle.
 
 *Note: As this guide aims at Java Dapp development, the used directory layout matches a [maven-project structure](https://maven.apache.org/guides/getting-started/).*
 
@@ -722,35 +722,36 @@ To query the enode address of *Machine I*, launch a geth console for your initia
 
 Quick overview of parameter changes, compared to single machine setup:  
  * ```--verbosity=4```: Low number means less output, higher more. 4 is a reasonable setting for getting problems printed without having your entire screen flooded with logs.
- * Remove ```--nodiscover``` -> you want to use P2P functionality, right ;-)
+ * Remove ```--nodiscover```. We need it for linking our nodes.
  * ```--ipcdisable``` -> no need for interprocess communication, we want the nodes to interact over LAN
  *  ```--port 303XY```, where X is count of your hexanome and Y the count of your PCs (so first pc is 1, second 2 , ...) -> reason is we must not have two machines with the same port for the P2P to work.
  *  ```--rpcport 81XY```, same reason (remote procedure calls need a unique target)
- * ```--rpcaddr 192.168.a.b``` , matching the physical address of your ethernet card.
+ * ```--rpcaddr 192.168.168.XY```, matching the physical address of your ethernet card.
  *  ```--netrestrict 192.168.168.0/24``` because we want to restrict the P2P discovery to our LAN.
 
 
-Once geth is running, we have to find out your entities enode. If you operate on the main chain, without the ```--nodiscover````option this is not needed. But we explicitly do not want geth to automatically connect to whatever nodes out there, only to a very specific list. Therfore we link them manually:  
+Once geth is running, we have to find out your entities enode. If you operate on the main chain, without the ```--nodiscover````option on the main chain this is not needed. Geth then will use hard-coded seed nodes to sync. But we work on a private chain and explicitly do not want geth to automatically connect to other nodes out there. Therfore we link them manually. We do so using enodes. Enodes are unique node adresses in networks. If you have the enode of another node in range you can connect to it.  
+So first thing to do is to find out the enode out your geth instance on machine 1:  
 ```bash
 > admin.nodeInfo.enode  
 "enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
 ```
 
-*Note: The substring ```[::]``` at the end substitutes the localhost address ```127.0.0.1```. If you want to use the enode address from another machine, it has to be replaced by Machine I's IP address: ```192.168.6.1```.*
+*Note: The substring ```[::]``` at the end substitutes the localhost address ```127.0.0.1```. If you want to use the enode address from another machine, it has to be replaced by Machine I's IP address: ```192.168.168.MI```.*
 
 #### Connect
 
 On *Machine II*, launch geth slightly modified arguments:
 
 ```bash
-    geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.10.2 --netrestrict 192.168.10.0/24 console
+    geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.168.MII --netrestrict 192.168.168.0/24 console
 ```
 
 *Note: Adapt datadir, networkid, port, rpcport, rpcaddr according to  your setup.*
 
 Next connect to the enode running on *machine I*, this will link them over the network and make them synchronize their blockchains:  
 ```bash
-    > admin.addPeer("enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.5.1:30301?discport=0")
+    > admin.addPeer("enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@192.168.168.1:30301?discport=0")
 ```
 
 Verify the logs of *machine I*. You should see something like:  
@@ -766,8 +767,8 @@ Also on *machine II* verify if the enode of *machine I* is listed as peer:
         id: "175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51",
         name: "Geth/v1.8.14-stable/darwin-amd64/go1.10.3",
         network: {
-          localAddress: "192.168.6.2:30302",
-          remoteAddress: "192.168.6.1:30301"
+          localAddress: "192.168.168.2:30302",
+          remoteAddress: "192.168.168.1:30301"
         },
         protocols: {
             eth: {
