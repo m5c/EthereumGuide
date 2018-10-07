@@ -452,7 +452,7 @@ Combined we end up with the following code snippet:
         Transfer.sendFunds(web3, credentialsWallet1, TARGET_ACCOUNT, BigDecimal.valueOf(AMOUNT), Convert.Unit.ETHER).sendAsync().get();
 ```
 
-*Note: Full demo code available on moddle.*
+*Note: Full demo code available on moodle.*
 
 Also, you will be able to track the execution of your program on the debug output of your geth node. Between the mining messages you should see:  
 ```bash
