@@ -101,7 +101,7 @@ You have three options, but I strongly recommend the third:
 
 ### Files
 
-All files relevant to the following guide reside in a special directory, the *ethereum base directory*. Your blockchain data and affiliated accounts reside in that directory. If you delete it you start from scratch.  
+All files relevant to the following guide reside in a special directory, the *ethereum base directory*. It will be created the first tim eyou run ```geth```. Your blockchain data and affiliated accounts reside in that directory. If you delete it you reset all that data.  
 Mac users: Your *ethereum base directory* is: ```~/Library/Ethereum/```  
 Linux users: Your *ethereum base directory* is: ```~/.ethereum/```  
 
