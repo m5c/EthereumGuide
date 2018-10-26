@@ -178,10 +178,10 @@ At any given moment you can list the available accounts, using:
 
 ```bash
     geth account list  
-    WARN [04-11|14:19:13] No etherbase set and no accounts found as default  
+    INFO [10-26|15:13:18.456] Maximum peer count                       ETH=25 LES=0 total=25
 ```
 
-As you have not yet added an account you will see the above warning. So lets see how to add a new account  
+As you have not yet added an account you will only see the above INFO line. So lets see how to add a new account  
 
 *Note: Unless another account is explicitly specified, geth uses your oldest account as default.*
 
