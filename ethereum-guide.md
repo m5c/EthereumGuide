@@ -93,7 +93,7 @@ You have three options, but I strongly recommend the third:
 *You will be slower than other teams, without our support and you will have to invest extra time outside the regular cursus.*  
 
  * Run Linux within your Windows installation, using a virtualization software.  
-*This will be more complicated than the original guide, as soon as we get to networking. You will not get any help from us on that behalf. Also virtualization consumes cpu power, leaving less performance for e.g. mining. In a network this can cause your system to be permanently outperformed by other machines.*
+*This will be more complicated than the original guide, as soon as we get to networking. You will not get any help from us on that behalf. Also virtualization consumes cpu power, leaving less performance for e.g. mining. In a network this can cause your system to be outperformed by other machines.*
     * Windows 10: You can use [HyperV](https://www.windowscentral.com/how-run-linux-distros-windows-10-using-hyper-v)  
     * Windows XP/Vista/7/8: Use [VirtualBox](http://www.psychocats.net/ubuntu/virtualbox)  
 
