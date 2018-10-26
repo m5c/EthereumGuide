@@ -170,7 +170,7 @@ Also, this will create a new subdirectory in your *ethereum base directory*. If 
 
 Every interaction with a blockchain takes place on behalf of an account. So in order to do anything with your newly created blockchain you now need at least one account.  
 **Hint:**
-By default all geth commands are bound to the default chain. This involves the creation of new accounts. You can override this behavior by providing a path to your own chain. Use the ```--datadir /some/path/``` switch. You can also use relative paths. A good practice is to ```cd``` into your *ethereum base dir* and then only provide the name of your chain as parameter.
+By default all geth commands are bound to the default chain. This involves the creation of new accounts. You can override this behavior by providing a path to your own chain. Use the ```--datadir="/some/path/"``` switch. You can also use relative paths. A good practice is to ```cd``` into your *ethereum base dir* and then only provide the name of your chain as parameter.
 
 ### Querying
 
