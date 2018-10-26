@@ -177,8 +177,8 @@ By default all geth commands are bound to the default chain. This involves the c
 At any given moment you can list the available accounts, using:  
 
 ```bash
-        geth account list  
-        WARN [04-11|14:19:13] No etherbase set and no accounts found as default  
+    geth account list  
+    WARN [04-11|14:19:13] No etherbase set and no accounts found as default  
 ```
 
 As you have not yet added an account you will see the above warning. So lets see how to add a new account  
