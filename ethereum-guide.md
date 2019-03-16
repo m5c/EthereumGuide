@@ -89,16 +89,13 @@ For building an Ethereum based Java-Dapp (Distributed Application), you need thr
 
 ### Windows
 
-You have three options, but I strongly recommend the third:  
+You have two options, but I strongly recommend the second:  
  * Find a way to install the tools for windows, adapt all unix-scripts that show up in this guide.  
 *You will be slower than other teams, without our support and you will have to invest extra time outside the regular cursus.*  
 
- * Run Linux within your Windows installation, using a virtualization software.  
-*This will be more complicated than the original guide, as soon as we get to networking. You will not get any help from us on that behalf. Also virtualization consumes cpu power, leaving less performance for e.g. mining. In a network this can cause your system to be outperformed by other machines.*
-    * Windows 10: You can use [HyperV](https://www.windowscentral.com/how-run-linux-distros-windows-10-using-hyper-v)  
-    * Windows XP/Vista/7/8: Use [VirtualBox](http://www.psychocats.net/ubuntu/virtualbox)  
-
  * [Install Linux natively](https://builtvisible.com/the-ubuntu-installation-guide/) on your PC. You can install it next to your Windows installation.
+
+*Warning: Operating system virtualization consumes additional resources. As mining is crucial to keeping a blockchain alive, you will have to cope with increased waiting time. Also you will be systematically outperformed by other peers.* 
 
 ### Files
 
