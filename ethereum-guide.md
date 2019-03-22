@@ -138,7 +138,7 @@ Paste the following content into that file. **Copy & Paste is not enough, you st
         },
         "difficulty": "0x20000",
         "extraData": "",
-        "gasLimit": "0x2fefd8",
+        "gasLimit": "9000000000000",
         "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "nonce": "0x0000000000000042",
         "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
