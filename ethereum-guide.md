@@ -10,7 +10,7 @@ By [Maximilian Schiedermeier](https://www.cs.mcgill.ca/~mschie3/), [Alumni](http
 
 ### Tools
 
-For building an Ethereum based Java-Dapp (Distributed Application), you need three things:
+You will need three things to build an Ethereum based Java-Dapp (Distributed Application):
 
  * [Geth](https://github.com/ethereum/go-ethereum/wiki/geth): Command line interface for running a full ethereum node.
  * [Web3J](https://web3j.io/): Java library for integrating with nodes on Ethereum blockchains.
