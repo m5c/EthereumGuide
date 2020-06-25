@@ -1,13 +1,14 @@
 # A Hands-On Ethereum Guide
-By [Maximilian Schiedermeier](https://www.cs.mcgill.ca/~mschie3/), [Alumni](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier),  
-[Email-McGill](mailto:maximilian.schiedermeier@mail.mcgill.ca)  
-[McGill DISL](https://www.cs.mcgill.ca/~kemme/disl/people.html), [McGill SEL](https://www.cs.mcgill.ca/~joerg/SEL/SEL_Home.html), [Liris labs](https://liris.cnrs.fr/), [DRIM](https://liris.cnrs.fr/en/team/drim), [INSA Lyon](https://www.insa-lyon.fr/).
 
-*Note: This file is under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.*
+A practical introduction to Ethereum-based Smart-contract development in Java.
 
 ## About
 
-Technical support for the [Ethereum / Blockchain lectures at INSA Lyon](http://planete.insa-lyon.fr/scolpeda/f/ects?id=41086&_lang=en).
+This guide served as technical support for final year computer science students, who I supervised on behalf of my activities as an [assistant lecturer / scientific engineer at INSA Lyon, 2018](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier).  
+
+In addition to their [theoretic course units on blockchain](http://planete.insa-lyon.fr/scolpeda/f/ects?id=41086&_lang=en), students had to demonstrate their practical understanding by developping a Java based Distributed-App that interacts with a private ethereum bockchain via smart contracts.
+
+ > *This file is under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.*
 
 ## Machine Setup
 
@@ -50,7 +51,7 @@ You will need three things to build an Ethereum based Java-Dapp (Distributed App
     chmod +x ~/bin/web3j
 ```
 
-*Note: Make sure the ~/bin/ directory is in your [PATH](https://opensource.com/article/17/6/set-path-linux).*
+ > *Make sure the ~/bin/ directory is in your [PATH](https://opensource.com/article/17/6/set-path-linux).*
 
 
  * Install solidity:  
@@ -98,7 +99,8 @@ You have two options, but I strongly recommend the second:
 
  * [Install Linux natively](https://builtvisible.com/the-ubuntu-installation-guide/) on your PC. You can install it next to your Windows installation.
 
-*Warning: Operating system virtualization consumes additional resources. As mining is crucial to keeping a blockchain alive, you will have to cope with increased waiting time. Also you will be systematically outperformed by other peers.* 
+
+ > *Warning: Operating system virtualization consumes additional resources. As mining is crucial to keeping a blockchain alive, you will have to cope with increased waiting time. Also you will be systematically outperformed by other peers.* 
 
 ### Files
 
@@ -124,7 +126,8 @@ For now it is empty but as soon as you interact with a blockchain you will see t
 
 By default all ```geth``` commands are executed scoped on the main ethereum blockchain. As interacting with the main chain implicitly means spending *real money*, we will advise geth to operate on our own private chain.
 To do so we first need to create a new blockchain. Each blockchain starts with a genesis block, the chains first block. The following steps show you how to create a new chain, based on a manually coded json representation of a genesis block.  
-*Note: When working on the main chain this step is not necessary. The main chain genesis block is hard coded into geth.*  
+
+ > *When working on the main chain this step is not necessary. The main chain genesis block is hard coded into geth.*  
 
 Navigate to your *ethereum base directory* and create a file named ```genesis.json```.  
 Paste the following content into that file. **Copy & Paste is not enough, you still have to modify the content afterwards!**
@@ -184,7 +187,7 @@ At any given moment you can list the available accounts, using:
 
 As you have not yet added an account you will only see the above INFO line. So lets see how to add a new account  
 
-*Note: Unless another account is explicitly specified, geth uses your oldest account as default.*
+ > *Unless another account is explicitly specified, geth uses your oldest account as default.*
 
 ### Creation
 
@@ -225,16 +228,16 @@ Querrying is the act of resolving the amount of ether attached to an account, re
 
         geth --nodiscover console  
 
-*Note: By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look out for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
+ > *By nature ```geth``` is designed for P2P scenarios. Unless you specify otherwise, geth will look out for other ethereum nodes and accept incoming connections. The following examples are altogether commands where you operate on your own local chain and explicitly do not want any P2P functionality. Tell ```geth``` to not interact with other nodes, by launching it using the ```--nodiscover``` option.*
 
-*Note: When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctrl-C```. ```Ctrl-D``` brings you back to the parent bash.*
+ > *When launching geth with the ```console``` argument you effectively start a new inner console. To kill a running command, use ```Ctrl-C```. ```Ctrl-D``` brings you back to the parent bash.*
 
 To then print the current balance in *Wei*, type:  
 
 
         eth.getBalance("0x...hashofyouraccounthere")  
 
-*Note: 1.000.000.000.000.000.000 Wei = 1 Ether*
+ > *1.000.000.000.000.000.000 Wei = 1 Ether*
 
 If you prefer a direct conversion into *Ether*, wrap your command with a call to web3j.  
 
@@ -312,7 +315,7 @@ Another way to boost an accounts balance is to transfer ether from another accou
     "0x08da052064eb4ffb20396cfef0f83e2ba09c932db26a3788f770638ea1200754"
 ```
 
-*Note: Instead of specifying source and target account by ```eth.accounts[x]``` you can always use hash-adresses wrapped in ticks: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*  
+ > *Instead of specifying source and target account by ```eth.accounts[x]``` you can always use hash-adresses wrapped in ticks: ```'0x3c7b081d3e608525a2efb821e80d597cef7a435c'```*  
 
 As you remember querying the balance only tells the amount of ether based on the *current blockchain state*. For your transfer to be visible in the account listing, it must still become part of the blockchain. Precisely the blockchain must be appended by a new block to contain the tranfer. As you will read [a little later](#transactions), transfering ether is one of three possible *transaction* types. From the moment of their registration, transactions first remain in a pending state where they are only queued for persistence. It is only when a new block is mined that they are eventually integrated into the blockchain. Precisely they are the payload of that new block.  
 **tl;dr: Your transfer has no visible effect until you mine at least one more block.**
@@ -368,7 +371,7 @@ Geth opens a unix socket for other processes running on the same machine. There 
 
 This guide covers *RPC* access.
 
-*Note: You are still working on a local chain with only a single node. The network functionality described here only concerns the communication with local programs that use your geth node as an entry point.*  
+ > *You are still working on a local chain with only a single node. The network functionality described here only concerns the communication with local programs that use your geth node as an entry point.*  
 
 ### Preparations
 
@@ -393,7 +396,7 @@ The ```--rpcapi``` and  ```--rpc``` arguments advise ```geth``` is to power up t
 
 For the exact meaning of the remaining parameters, see [here](https://ethereum.stackexchange.com/questions/41112/what-do-these-geth-rpcapi-parameters-mean-db-and-net) and [here](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)  
 
-*Note: As mentioned in the ["Transferring Ether"](#transferring-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp will not be able to execute actions that internally require [transactions](#transactions). If you use synchronous API-calls it will even block.*
+ > *As mentioned in the ["Transferring Ether"](#transferring-ether) section, a blockchain without miners is "dead". If you forget the ```--mine``` option, your Dapp will not be able to execute actions that internally require [transactions](#transactions). If you use synchronous API-calls it will even block.*
 
 
 #### Test accessing your node
@@ -404,7 +407,7 @@ You can easily test access to your node using ```curl```. More information [here
     curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x3c7b081d3e608525a2efb821e80d597cef7a435c", "latest"],"id":1}' http://localhost:8545 
 ```
 
-*Note: Reply to the above balance request is the amount in Wei in [hexadecimal format](https://www.rapidtables.com/convert/number/hex-to-decimal.html).*
+ > *Reply to the above balance request is the amount in Wei in [hexadecimal format](https://www.rapidtables.com/convert/number/hex-to-decimal.html).*
 
 ### Java Access
 
@@ -428,7 +431,7 @@ Easiest way is to set up your java project to use a [build automation tool](http
     </dependencies>
 ```
 
-*Note: Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
+ > * Some IDEs, (e.g. IntelliJ) do not detect changes to your maven configuration files by default. This means that your java code cannot use external libraries, even if you added them to your ```pom.xml```. Look out for a corresponding popup and select "[enable auto-imports](http://testerhq.com/2013/09/18/do-enable-auto-import-in-intellij-for-maven-projects-need-to-be-imported/)".*
 
 #### Code
 
@@ -455,7 +458,7 @@ Combined we end up with the following code snippet:
         Transfer.sendFunds(web3, credentialsWallet1, TARGET_ACCOUNT, BigDecimal.valueOf(AMOUNT), Convert.Unit.ETHER).sendAsync().get();
 ```
 
-*Note: Full demo code available on moodle.*
+ > *Full demo code available on moodle.*
 
 Also, you will be able to track the execution of your program on the debug output of your geth node. Between the mining messages you should see:  
 ```bash
@@ -469,7 +472,7 @@ You can directly store the return value of the third line in a transaction recei
 
 A smart contract is a program that resides in the ethereum blockchain. Ethereum provides strong guarantees for its integrity and we can therfore trust the correctness of generated outputs.
 
-*Note: "Correctness" applies from a security point of view, here. We stipulate that computed outputs correlate to deposited code. But semantically a smart contract is still prone to errors.*
+ > *"Correctness" applies from a security point of view, here. We stipulate that computed outputs correlate to deposited code. But semantically a smart contract is still prone to errors.*
 
 *More information and code examples [here](https://web3j.readthedocs.io/en/latest/smart_contracts.html)*
 
@@ -495,7 +498,7 @@ Developing and using a smart contracts always follows the same pattern.
 
 The following subsections illustrate the process on the example of a Java Dapp that first deposits a smart contract "mirror". It is a minimal smart contract that merely offers a single function "reflect". When reflect is called it simply returns the received input string. After the deployment the Dapp calls the contract with ```Hello, smart-world!``` and prints the return value. Complete sources of a demo implementation can be found on moodle.
 
-*Note: As this guide aims at Java Dapp development, the used directory layout matches a [maven-project structure](https://maven.apache.org/guides/getting-started/).*
+ > *As this guide aims at Java Dapp development, the used directory layout matches a [maven-project structure](https://maven.apache.org/guides/getting-started/).*
 
 #### Implementation of the smart contract logic
 
@@ -580,7 +583,7 @@ Java does not know how to handle these binaries. But you can embed them into jav
     web3j solidity generate ./mirrorcontract.bin ./mirrorcontract.abi -p fr.insa.drim.schieder.etherdemo.hellosmartworld -o ../../src/main/java/
 ```
 
-*Note: Don't forget to adapt the _bin and _abi file names, as well as your package name.*
+ > *Don't forget to adapt the _bin and _abi file names, as well as your package name.*
 
 You will find a new java class in your sources:   
 ```bash
@@ -609,7 +612,7 @@ You will find a new java class in your sources:
 
 If you inspect the content of that file you will actually find the smart contract binary in a final String named ```BINARY```.
 
-*Note: Never edit the content of generated files.*
+ > *Never edit the content of generated files.*
 
 #### Deployment of a smart contract
 
@@ -632,7 +635,7 @@ As you see only the third line differs from the [previous java snippet](#java-ac
     Mirrorcontract.deploy(web3, credentials, DefaultGasProvider.GAS_PRICE, DefaultGasProvider.GAS_LIMIT).send();
 ```
 
-*Note: The last line returns a Mirrorcontract instance that you can use for further interactions.*  
+ > *The last line returns a Mirrorcontract instance that you can use for further interactions.*  
 
 Once more you can track the effect of your transaction in geths logs:  
 ```bash
@@ -682,7 +685,7 @@ Further illustrations refer to the following two-machine demo setup:
     +-----------------------+                      +-----------------------+
 ```
 
-*Note: On Unix platforms you can easily query and set the IP-Layer configurations of your networking devices, using the [```ifconfig``` command](https://linux.die.net/man/8/ifconfig).* 
+ > *On Unix platforms you can easily query and set the IP-Layer configurations of your networking devices, using the [```ifconfig``` command](https://linux.die.net/man/8/ifconfig).* 
 
 ### Common genesis
 
@@ -721,7 +724,7 @@ To query the enode address of *Machine I*, launch a geth console for your initia
  geth --datadir="nameOfYourChainGoesHere" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30301 --rpcport 8101 --rpcaddr 192.168.168.10 --netrestrict 192.168.168.0/24 console
 ```
 
-*Note: Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
+ > *Adapt datadir, networkid, port, rpcport, rpcaddr to your setup.*
 
 Quick overview of parameter changes, compared to single machine setup:  
  * ```--verbosity=4```: Low number means less output, higher more. 4 is a reasonable setting for getting problems printed without having your entire screen flooded with logs.
@@ -740,7 +743,7 @@ So first thing to do is to find out the enode out your geth instance on machine 
 "enode://175cb35c728eb654608a22117f59851c4c45cd7eaddeab3b3af4a0694a3389ee3e6e12d009bb20da7188987ea00ac3c79a040879559000d6c53ef81cb0df4b51@[::]:30301?discport=0"
 ```
 
-*Note: The substring ```[::]``` at the end substitutes the localhost address ```127.0.0.1```. If you want to use the enode address from another machine, it has to be replaced by Machine I's IP address: ```192.168.168.MI```.*
+ > *The substring ```[::]``` at the end substitutes the localhost address ```127.0.0.1```. If you want to use the enode address from another machine, it has to be replaced by Machine I's IP address: ```192.168.168.MI```.*
 
 #### Connect
 
@@ -750,7 +753,7 @@ On *Machine II*, launch geth slightly modified arguments:
     geth --datadir="sharedchain" --networkid 1608199012345 --verbosity=4 --ipcdisable --port 30302 --rpcport 8102 --rpcaddr 192.168.168.MII --netrestrict 192.168.168.0/24 console
 ```
 
-*Note: Adapt datadir, networkid, port, rpcport, rpcaddr according to  your setup.*
+ > *Adapt datadir, networkid, port, rpcport, rpcaddr according to  your setup.*
 
 Next connect to the enode running on *machine I*, this will link them over the network and make them synchronize their blockchains:  
 ```bash
@@ -800,3 +803,5 @@ Congratulations, you have made it through this guide and achieved the following 
  * Author: Maximilian Schiedermeier ![email](email.png)
  * Github: Kartoffelquadrat
  * Webpage: https://www.cs.mcgill.ca/~mschie3
+ * Associations: [McGill DISL](https://www.cs.mcgill.ca/~kemme/disl/people.html), [McGill SEL](https://www.cs.mcgill.ca/~joerg/SEL/SEL_Home.html)
+
